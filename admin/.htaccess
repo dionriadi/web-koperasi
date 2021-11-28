@@ -1,0 +1,7 @@
+options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^([-a-z]*)$ index.php?halaman=$1 [L]
+
+
