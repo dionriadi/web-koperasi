@@ -40,7 +40,7 @@ while($data = mysqli_fetch_row($query)){
                   <div class = "card-body">
                   <table class="table table-bordered">
                     <?php if(!empty($_GET['notif'])){
-                    if($_GET['notif']=="editberhasil"){?>
+                    if($_GET['notif']=="berhasil"){?>
                         <div class="alert alert-success" role="alert">
                         Data Berhasil Diubah</div>
                     <?php }?>

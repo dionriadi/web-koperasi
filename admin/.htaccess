@@ -2,6 +2,12 @@ options All -Indexes
 
 RewriteEngine On
 
+#halaman umum
 RewriteRule ^([-a-z]*)$ index.php?halaman=$1 [L]
 
+#halaman notif gagal
+RewriteRule ^([-a-z]*)_([-a-z]*)_([-a-z]*)$ index.php?halaman=$1&notif=$2&jenis=$3 [L]
+
+#halaman notif berhasil
+RewriteRule ^([-a-z]*)_([-a-z]*)$ index.php?halaman=$1&notif=$2 [L]
 

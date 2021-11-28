@@ -1,9 +1,8 @@
 <?php 
-session_start();
-include("../koneksi/koneksi.php");
+
 $id_user = $_SESSION['id_user'];
 //get profil
-$sql = "select `nama`, `email`,`foto`,`username`,`password`, `level` from `user` where `id_user`='$id_user'";
+$sql = "select `nama`, `email`,`foto`,`username`,`password`, `level` from `admin` where `id_user`='$id_user'";
 $query = mysqli_query($koneksi, $sql);
 while($data = mysqli_fetch_row($query)){
 	$nama = $data[0];
@@ -24,7 +23,7 @@ while($data = mysqli_fetch_row($query)){
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit Profil</li>
                   </ol>
                 </nav>
@@ -42,12 +41,16 @@ while($data = mysqli_fetch_row($query)){
                     <div class="col-12 d-flex justify-content-end">
                       <a href="profil" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
                     </div>
-                    <div class="alert alert-danger mt-5">This is danger alert.</div>
+                    <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
+                    <?php if($_GET['notif']=="kosong"){?>
+                        <div class="alert alert-danger mt-5">Maaf data <?php echo $_GET['jenis'];?> wajib di isi</div>
+                    <?php }?>
+                    <?php }?>
                   </div>
                   
                   <div class="card-content">
                     <div class="card-body">
-                      <form class="form form-vertical" action="konfirmasi-edit-profil.php" method="post" enctype="multipart/form-data">
+                      <form class="form form-vertical" action="konfirmasi-edit-profil" method="post" enctype="multipart/form-data">
                         <div class="form-body">
                           <div class="row">
                             <div class="col-12">

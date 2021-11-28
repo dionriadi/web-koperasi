@@ -11,6 +11,9 @@ if(isset($_GET["halaman"])){
       include("halaman/signout.php");
     }
     // konfirmasi
+    else if($halaman=="konfirmasi-edit-profil"){
+      include("halaman/konfirmasi-edit-profil.php");
+    }
   }
 ?>
 

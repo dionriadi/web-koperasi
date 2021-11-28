@@ -1,16 +1,13 @@
 <?php 
 
-include("../../koneksi/koneksi.php");
 if(isset($_SESSION['id_user'])){
 	$id_user = $_SESSION['id_user'];
 	$nama = $_POST['nama'];
 	$email = $_POST['email'];
     $username = $_POST['username'];
-    $password = $_POST['password'];
 
- 
     //get foto 
-    $sql_f = "SELECT `foto` FROM `user` WHERE `id_user`='$id_user'";
+    $sql_f = "SELECT `foto` FROM `admin` WHERE `id_user`='$id_user'";
     $query_f = mysqli_query($koneksi,$sql_f);
     while($data_f = mysqli_fetch_row($query_f)){
         $foto = $data_f[0];
@@ -18,9 +15,11 @@ if(isset($_SESSION['id_user'])){
     }
  
 	if(empty($nama)){
-	    header("Location:edit-profil-notif-editkosong-jenis-nama");
+	    header("Location:edit-profil_kosong_nama");
 	}else if(empty($email)){
-	    header("Location:edit-profil-notif-editkosong-jenis-email");
+	    header("Location:edit-profil_kosong_email");
+	}else if(empty($username)){
+	    header("Location:edit-profil_kosong_username");
 	}else{
         $lokasi_file = $_FILES['foto']['tmp_name'];
 		$nama_file = $_FILES['foto']['name'];
@@ -29,18 +28,18 @@ if(isset($_SESSION['id_user'])){
             	   if(!empty($foto)){
                      unlink("foto/$foto");
                   }
-		   $sql = "update `user` set `nama`='$nama', 
-                  `email`='$email', `foto`='$nama_file' 
+		   $sql = "update `admin` set `nama`='$nama', 
+                  `email`='$email', `foto`='$nama_file', `username`= '$username'
                   where `id_user`='$id_user'";
                   //echo $sql;
 		   mysqli_query($koneksi,$sql);
 		}else{
-		   $sql = "update `user` set `nama`='$nama', `email`='$email' 
+		   $sql = "update `admin` set `nama`='$nama', `email`='$email', `username`= '$username' 
                   where `id_user`='$id_user'";
                   //echo $sql;
 		   mysqli_query($koneksi,$sql);
 		}
-      	    header("Location:profil-notif-editberhasil");
+      	    header("Location:profil_berhasil");
 	}
 }
  
