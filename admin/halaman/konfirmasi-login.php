@@ -21,9 +21,9 @@
         
         //pengecekan salah/benar input
         if(($user != $userDb ) || ($password != $passDb)){
-          header("Location:salah");       
+          header("Location:login_salah");       
         }else{
-          session_start();
+          
           $_SESSION['id_user']=$id_user;
           $_SESSION['level']=$level;
           header("Location:beranda");
