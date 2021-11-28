@@ -56,15 +56,15 @@
                     </a>
                   </li>
                   <li class="sidebar-item">
-                    <a href="profil" class="sidebar-link">
-                      <i class="bi bi-person-circle"></i>
-                      <span>Profil</span>
-                    </a>
-                  </li>
-                  <li class="sidebar-item">
                     <a href="pengaturan-admin" class="sidebar-link">
                       <i class="bi bi-gear"></i>
                       <span>Pengaturan Admin</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="profil" class="sidebar-link">
+                      <i class="bi bi-person-circle"></i>
+                      <span>Profil</span>
                     </a>
                   </li>
                   <li class="sidebar-item">
