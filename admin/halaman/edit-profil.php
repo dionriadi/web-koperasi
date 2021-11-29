@@ -2,7 +2,7 @@
 
 $id_user = $_SESSION['id_user'];
 //get profil
-$sql = "select `nama`, `email`,`foto`,`username`,`password`, `level` from `admin` where `id_user`='$id_user'";
+$sql = "select `nama`, `email`,`foto`,`username`,`password`, `level` from `admin` where `id_admin`='$id_user'";
 $query = mysqli_query($koneksi, $sql);
 while($data = mysqli_fetch_row($query)){
 	$nama = $data[0];

@@ -5,7 +5,7 @@ $passLama   = $_POST['pass_lama'];
 $passKonfirm = $_POST['pass_konfirm']; 
 
 $passEnkrip = mysqli_real_escape_string($koneksi, MD5($passLama));
-$sql_d = "SELECT `password` from `admin` where `id_user` = '$id_user' ";  
+$sql_d = "SELECT `password` from `admin` where `id_admin` = '$id_user' ";  
 $query_d = mysqli_query($koneksi,$sql_d);
 
     while($data_d = mysqli_fetch_row($query_d)){
@@ -24,7 +24,7 @@ if((empty($passLama))){
         header("Location:ubah-password_passbarubeda");
     }else{
         $passEnkripBaru = mysqli_real_escape_string($koneksi, MD5($passBaru));
-        $sql_d = "UPDATE `admin` set `password`='$passEnkripBaru' where `id_user`='$id_user'";
+        $sql_d = "UPDATE `admin` set `password`='$passEnkripBaru' where `id_admin`='$id_user'";
 		mysqli_query($koneksi,$sql_d);
         header("Location:profil_ubahberhasil");
 	}

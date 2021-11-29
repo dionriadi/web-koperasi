@@ -7,7 +7,7 @@
         $password = mysqli_real_escape_string($koneksi, MD5($pass));
         
       //mengambil data dari database
-        $sql="select `id_user`, `level`, `username`, `password` from `admin` 
+        $sql="select `id_admin`, `level`, `username`, `password` from `admin` 
                 where `username`='$username' and
                `password`='$password'";
         $query = mysqli_query($koneksi, $sql);  

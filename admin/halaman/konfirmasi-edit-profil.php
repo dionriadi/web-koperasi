@@ -7,7 +7,7 @@ if(isset($_SESSION['id_user'])){
     $username = $_POST['username'];
 
     //get foto 
-    $sql_f = "SELECT `foto` FROM `admin` WHERE `id_user`='$id_user'";
+    $sql_f = "SELECT `foto` FROM `admin` WHERE `id_admin`='$id_user'";
     $query_f = mysqli_query($koneksi,$sql_f);
     while($data_f = mysqli_fetch_row($query_f)){
         $foto = $data_f[0];
@@ -30,12 +30,12 @@ if(isset($_SESSION['id_user'])){
                   }
 		   $sql = "update `admin` set `nama`='$nama', 
                   `email`='$email', `foto`='$nama_file', `username`= '$username'
-                  where `id_user`='$id_user'";
+                  where `id_admin`='$id_user'";
                   //echo $sql;
 		   mysqli_query($koneksi,$sql);
 		}else{
 		   $sql = "update `admin` set `nama`='$nama', `email`='$email', `username`= '$username' 
-                  where `id_user`='$id_user'";
+                  where `id_admin`='$id_user'";
                   //echo $sql;
 		   mysqli_query($koneksi,$sql);
 		}
