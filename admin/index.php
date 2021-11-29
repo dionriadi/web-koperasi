@@ -13,6 +13,8 @@ if(isset($_GET["halaman"])){
     // konfirmasi
     else if($halaman=="konfirmasi-edit-profil"){
       include("halaman/konfirmasi-edit-profil.php");
+    }else if($halaman=="konfirmasi-password"){
+      include("halaman/konfirmasi-password.php");
     }
   }
 ?>
