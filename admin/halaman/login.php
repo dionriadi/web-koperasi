@@ -36,8 +36,8 @@
           </div>
 
           <form class="login100-form validate-form" action="konfirmasi-login" method="post">
-            <?php if(!empty($_GET['notif'])){?>
-              <?php if($_GET['notif']=="salah"){?>
+            <?php if((!empty($_GET['halaman'])) && (!empty($_GET['notif']))){?>
+              <?php if(($_GET['halaman']=="login") && $_GET['notif']=="salah"){?>
                 <span class="text-danger">
                   Username dan Password Tidak Sesuai
                 </span>

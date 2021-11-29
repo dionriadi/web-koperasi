@@ -20,7 +20,7 @@
         }
         
         //pengecekan salah/benar input
-        if(($user != $userDb ) || ($password != $passDb)){
+        if(($username != $userDb ) || ($password != $passDb)){
           header("Location:login_salah");       
         }else{
           
