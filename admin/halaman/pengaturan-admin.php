@@ -5,7 +5,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 	if($_GET['aksi']=='hapus'){
 		$id_user = $_GET['data'];
 
-    $sql_f = "SELECT foto FROM `admin` WHERE `id_user`='$id_user'";
+    $sql_f = "SELECT foto FROM `admin` WHERE `id_admin`='$id_user'";
     $query_f = mysqli_query($koneksi,$sql_f);
     while($data_f = mysqli_fetch_row($query_f)){
         $foto = $data_f[0];
@@ -13,7 +13,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
     }
     
 		$sql_dh = "delete from `admin` 
-		where `id_user` = '$id_user'";
+		where `id_admin` = '$id_user'";
 		mysqli_query($koneksi,$sql_dh);
 	}
 }
@@ -37,6 +37,9 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
           <section class="section">
             <div class="card">
               <div class="card-body">
+              <div class="col-12 d-flex justify-content-end">
+                <a href="tambah-user" class="btn btn-primary me-1 mb-1">Tambah User</a>
+              </div>
                 <table class="table table-bordered mt-4" id="table1">
                   <thead>
                     <tr>
@@ -50,7 +53,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                   <tbody>
                   <?php 
                       $posisi=0;
-                        $sql_k = "SELECT `id_user`,`nama`, `email`, `level` FROM `admin` ";
+                        $sql_k = "SELECT `id_admin`,`nama`, `email`, `level` FROM `admin` ORDER BY `id_admin` ";
                         $query_k = mysqli_query($koneksi,$sql_k);
                         $posisi+1;
                         while($data_k = mysqli_fetch_row($query_k)){
@@ -74,6 +77,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                       <?php $posisi++; }?>
                   </tbody>
                 </table>
+                
               </div>
             </div>
           </section>
