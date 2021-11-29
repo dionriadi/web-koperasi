@@ -24,9 +24,9 @@ if((empty($passLama))){
         header("Location:ubah-password_passbarubeda");
     }else{
         $passEnkripBaru = mysqli_real_escape_string($koneksi, MD5($passBaru));
-        $sql_d = "UPDATE `user` set `password`='$passEnkripBaru' where `id_user`='$id_user'";
+        $sql_d = "UPDATE `admin` set `password`='$passEnkripBaru' where `id_user`='$id_user'";
 		mysqli_query($koneksi,$sql_d);
-        header("Location:ubah-password_ubahberhasil");
+        header("Location:profil_ubahberhasil");
 	}
 
 

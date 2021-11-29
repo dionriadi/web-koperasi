@@ -8,8 +8,8 @@
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Edit Profil</li>
+                    <li class="breadcrumb-item"><a href="profil">Profil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ubah Password</li>
                   </ol>
                 </nav>
               </div>
