@@ -34,7 +34,7 @@
                   </div>
                   
                   <div class="card-content">
-                    <form class="form form-vertical" action="konfirmasi-edit-profil" method="post" enctype="multipart/form-data">
+                    <form class="form form-vertical" action="konfirmasi-tambah-admin" method="post" enctype="multipart/form-data">
                       <div class="card-body">
                         <div class="form-group row">
                           <label for="nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
@@ -74,18 +74,14 @@
                           <div class="col-sm-7">
                             <div class="custom-file">
                               <input type="file" class="basic-filepond" name="foto" id="customFile">
-                              
                             </div>  
                           </div>
                         </div>
-                          </div>
-                            </div>
                             <div class="col-12 d-flex justify-content-end">
                               <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                               <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                             </div>
-                          </div>
-                        </div>
+                    
                       
                     </div>
                     </form>

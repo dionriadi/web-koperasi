@@ -10,13 +10,17 @@ if(isset($_GET["halaman"])){
     else if($halaman=="sign-out"){
       include("halaman/signout.php");
     }
-    // konfirmasi
+    // konfirmasi manajemen profil
     else if($halaman=="konfirmasi-edit-profil"){
       include("halaman/konfirmasi-edit-profil.php");
     }else if($halaman=="konfirmasi-password"){
       include("halaman/konfirmasi-password.php");
-    }
-  }
+    // konfirmasi manajemen admin
+    }else if($halaman=="konfirmasi-edit-admin"){
+      include("halaman/konfirmasi-edit-admin.php");
+    }else if($halaman=="konfirmasi-tambah-admin"){
+      include("halaman/konfirmasi-tambah-admin.php");
+    }}
 ?>
 
 <!DOCTYPE html>

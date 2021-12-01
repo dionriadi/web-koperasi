@@ -38,9 +38,14 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
             <div class="card">
               <div class="card-body">
               <div class="col-12 d-flex justify-content-end">
-                <a href="tambah-admin" class="btn btn-primary me-1 mb-1">Tambah User</a>
+                <a href="tambah-admin" class="btn btn-primary me-1 mb-1">Tambah Admin</a>
               </div>
                 <table class="table table-bordered mt-4" id="table1">
+                <?php if(!empty($_GET['notif'])){
+                    if($_GET['notif']=="berhasil"){?>
+                        <div class="alert alert-success" role="alert">
+                        Data Berhasil Ditambahkan</div>
+                    <?php }}?>
                   <thead>
                     <tr>
                       <th>No</th>
