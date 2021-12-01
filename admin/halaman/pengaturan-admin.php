@@ -5,15 +5,14 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 	if($_GET['aksi']=='hapus'){
 		$id_user = $_GET['data'];
 
-    $sql_f = "SELECT foto FROM `admin` WHERE `id_admin`='$id_user'";
+    $sql_f = "SELECT `foto` FROM admin WHERE `id_admin`='$id_user'";
     $query_f = mysqli_query($koneksi,$sql_f);
     while($data_f = mysqli_fetch_row($query_f)){
         $foto = $data_f[0];
         unlink("foto/$foto"); 
     }
     
-		$sql_dh = "delete from `admin` 
-		where `id_admin` = '$id_user'";
+		$sql_dh = "delete from `admin` where `id_admin` = '$id_user'";
 		mysqli_query($koneksi,$sql_dh);
 	}
 }
@@ -27,7 +26,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="beranda.html">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Pengaturan Admin</li>
                   </ol>
                 </nav>
@@ -45,6 +44,10 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                     if($_GET['notif']=="berhasil"){?>
                         <div class="alert alert-success" role="alert">
                         Data Berhasil Ditambahkan</div>
+                    <?php }
+                  else if($_GET['notif']=="hapusberhasil"){?>
+                  <div class="alert alert-warning" role="alert">
+                        Data Berhasil Dihapus</div>
                     <?php }}?>
                   <thead>
                     <tr>
@@ -75,7 +78,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                         <td align="center">
                           <a href="edit-user_<?php echo $id_user;?>" class="btn btn-xs btn-info" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a href="detail-user_<?php echo $id_user;?>" class="btn btn-xs btn-info" title="Detail"><i class="bi bi-eye"></i></a>
-                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $nama; ?>?'))window.location.href = 'user_hapus_<?php echo $id_user;?>_hapusberhasil'" class="btn btn-xs btn-warning"><i class="bi bi-trash"></i> Hapus
+                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $nama; ?>?'))window.location.href='pengaturan-admin_hapus_<?php echo $id_user;?>_hapusberhasil'" class="btn btn-xs btn-warning"><i class="bi bi-trash"></i> Hapus
                       </a>
                         </td>
                       </tr>
