@@ -60,8 +60,11 @@ if(isset($_GET["halaman"])){
               include("halaman/pinjaman.php");
             }else if($halaman=="pengumuman"){
               include("halaman/pengumuman.php");
+          //manajemen admin
             }else if($halaman=="pengaturan-admin"){
               include("halaman/pengaturan-admin.php");
+            }else if($halaman=="tambah-admin"){
+              include("halaman/tambah-admin.php");
 
           //manajemen profil 
             }else if($halaman=="profil"){

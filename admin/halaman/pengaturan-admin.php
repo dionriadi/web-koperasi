@@ -38,7 +38,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
             <div class="card">
               <div class="card-body">
               <div class="col-12 d-flex justify-content-end">
-                <a href="tambah-user" class="btn btn-primary me-1 mb-1">Tambah User</a>
+                <a href="tambah-admin" class="btn btn-primary me-1 mb-1">Tambah User</a>
               </div>
                 <table class="table table-bordered mt-4" id="table1">
                   <thead>
