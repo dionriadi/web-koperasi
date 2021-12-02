@@ -48,7 +48,11 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                   else if($_GET['notif']=="hapusberhasil"){?>
                   <div class="alert alert-warning" role="alert">
                         Data Berhasil Dihapus</div>
-                    <?php }}?>
+                    <?php }
+                  else if($_GET['notif']=="editberhasil"){?>
+                    <div class="alert alert-success" role="alert">
+                          Data Berhasil Diedit</div>
+                      <?php }}?>
                   <thead>
                     <tr>
                       <th>No</th>
@@ -76,7 +80,7 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                         <td><?php echo $email; ?></td>
                         <td><?php echo $level; ?></td>
                         <td align="center">
-                          <a href="edit-user_<?php echo $id_user;?>" class="btn btn-xs btn-info" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a href="edit-admin_<?php echo $id_user;?>" class="btn btn-xs btn-info" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a href="detail-admin_<?php echo $id_user;?>" class="btn btn-xs btn-info" title="Detail"><i class="bi bi-eye"></i></a>
                           <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $nama; ?>?'))window.location.href='pengaturan-admin_hapus_<?php echo $id_user;?>_hapusberhasil'" class="btn btn-xs btn-warning"><i class="bi bi-trash"></i> Hapus
                       </a>

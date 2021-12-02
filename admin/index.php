@@ -71,7 +71,7 @@ if(isset($_GET["halaman"])){
             }else if($halaman=="tambah-admin"){
               include("halaman/tambah-admin.php");
             }else if($halaman=="edit-admin"){
-              include("halaman/tambah-admin.php");
+              include("halaman/edit-admin.php");
             }else if($halaman=="detail-admin"){
               include("halaman/detail-admin.php");
           //manajemen profil 
