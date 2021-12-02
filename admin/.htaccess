@@ -5,6 +5,9 @@ RewriteEngine On
 #halaman umum
 RewriteRule ^([-a-z]*)$ index.php?halaman=$1 [L]
 
+#halaman detail dan edit
+RewriteRule ^([-a-z]*)_([0-9]*)$ index.php?halaman=$1&data=$2 [L]
+
 #halaman notif 1
 RewriteRule ^([-a-z]*)_([-a-z]*)$ index.php?halaman=$1&notif=$2 [L]
 
