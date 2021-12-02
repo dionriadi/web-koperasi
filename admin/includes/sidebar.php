@@ -30,7 +30,7 @@
                     </a>
                   </li>
                   <li class="sidebar-item">
-                    <a href="pengaturan-user" class="sidebar-link">
+                    <a href="atur-user" class="sidebar-link">
                     <i class="bi bi-file-earmark-person"></i>
                       <span>Daftar Anggota</span>
                     </a>
@@ -56,7 +56,7 @@
                     </a>
                   </li>
                   <li class="sidebar-item">
-                    <a href="pengaturan-admin" class="sidebar-link">
+                    <a href="atur-admin" class="sidebar-link">
                       <i class="bi bi-gear"></i>
                       <span>Pengaturan Admin</span>
                     </a>

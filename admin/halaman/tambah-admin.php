@@ -8,7 +8,7 @@
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="pengaturan-admin">Pengaturan Admin</a></li>
+                    <li class="breadcrumb-item"><a href="atur-admin">Pengaturan Admin</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Tambah Admin</li>
                   </ol>
                 </nav>
@@ -24,7 +24,7 @@
                   <div class="card-header">
                     <h5 class="card-title" style="color: white; background-color: rgb(93, 93, 146); padding: 20px; border-radius: 10px;">Form Tambah Admin</h5>
                     <div class="col-12 d-flex justify-content-end">
-                      <a href="pengaturan-admin" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+                      <a href="atur-admin" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
                     </div>
                     <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
                     <?php if($_GET['notif']=="kosong"){?>
