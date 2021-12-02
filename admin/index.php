@@ -94,6 +94,8 @@ if(isset($_GET["halaman"])){
               include("halaman/tambah-pengumuman.php");
             }else if($halaman=="edit-info"){
               include("halaman/edit-pengumuman.php");
+            }else if($halaman=="detail-info"){
+              include("halaman/detail-pengumuman.php");
             }
         ?>
         

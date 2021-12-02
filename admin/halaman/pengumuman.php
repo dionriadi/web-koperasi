@@ -3,16 +3,16 @@
 $id_userlogin= $_SESSION['id_user'];
 if((isset($_GET['aksi']))&&(isset($_GET['data']))){
 	if($_GET['aksi']=='hapus'){
-		$id_user = $_GET['data'];
+		$id_pengumuman = $_GET['data'];
 
-    $sql_f = "SELECT `foto` FROM admin WHERE `id_admin`='$id_user'";
-    $query_f = mysqli_query($koneksi,$sql_f);
-    while($data_f = mysqli_fetch_row($query_f)){
-        $foto = $data_f[0];
-        unlink("foto/$foto"); 
-    }
+    // $sql_f = "SELECT `foto` FROM admin WHERE `id_admin`='$id_pengumuman'";
+    // $query_f = mysqli_query($koneksi,$sql_f);
+    // while($data_f = mysqli_fetch_row($query_f)){
+    //     $foto = $data_f[0];
+    //     unlink("foto/$foto"); 
+    // }
     
-		$sql_dh = "delete from `admin` where `id_admin` = '$id_user'";
+		$sql_dh = "delete from `pengumuman` where `id_pengumuman` = '$id_pengumuman'";
 		mysqli_query($koneksi,$sql_dh);
 	}
 }
@@ -78,9 +78,9 @@ if((isset($_GET['aksi']))&&(isset($_GET['data']))){
                         <td><?php echo $tanggal; ?></td>
                         
                         <td align="center">
-                          <a href="edit-pengumuman_<?php echo $id_pengumuman;?>" class="btn btn-xs btn-info" title="Edit"><i class="bi bi-pencil-square"></i></a>
-                          <a href="detail-pengumuman_<?php echo $id_pengumuman;?>" class="btn btn-xs btn-info" title="Detail"><i class="bi bi-eye"></i></a>
-                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $judul; ?>?'))window.location.href='pengumuman_hapus_<?php echo $id_pengumuman;?>_hapusberhasil'" class="btn btn-xs btn-warning"><i class="bi bi-trash"></i> Hapus
+                          <a href="edit-info_<?php echo $id_pengumuman;?>" class="btn btn-xs btn-info" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a href="detail-info_<?php echo $id_pengumuman;?>" class="btn btn-xs btn-info" title="Detail"><i class="bi bi-eye"></i></a>
+                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $judul; ?>?'))window.location.href='info_hapus_<?php echo $id_pengumuman;?>_hapusberhasil'" class="btn btn-xs btn-warning"><i class="bi bi-trash"></i> Hapus
                       </a>
                         </td>
                       </tr>
