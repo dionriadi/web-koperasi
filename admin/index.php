@@ -20,6 +20,11 @@ if(isset($_GET["halaman"])){
       include("halaman/konfirmasi-edit-admin.php");
     }else if($halaman=="konfirmasi-tambah-admin"){
       include("halaman/konfirmasi-tambah-admin.php");
+    // konfirmasi manajemen pengumuman
+    }else if($halaman=="konfirmasi-tambah-info"){
+      include("halaman/konfirmasi-tambah-pengumuman.php");
+    }else if($halaman=="konfirmasi-edit-info"){
+      include("halaman/konfirmasi-edit-pengumuman.php");
     }
   }
 ?>
@@ -81,6 +86,14 @@ if(isset($_GET["halaman"])){
               include("halaman/edit-profil.php");
             }else if($halaman=="ubah-password"){
               include("halaman/ubah-password.php");
+            
+          //manajemen pengumuman
+            }else if($halaman=="info"){
+              include("halaman/pengumuman.php");
+            }else if($halaman=="tambah-info"){
+              include("halaman/tambah-pengumuman.php");
+            }else if($halaman=="edit-info"){
+              include("halaman/edit-pengumuman.php");
             }
         ?>
         

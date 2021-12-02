@@ -1,4 +1,23 @@
-        <div class="page-heading">
+<?php 
+
+$id_userlogin= $_SESSION['id_user'];
+if((isset($_GET['aksi']))&&(isset($_GET['data']))){
+	if($_GET['aksi']=='hapus'){
+		$id_user = $_GET['data'];
+
+    $sql_f = "SELECT `foto` FROM admin WHERE `id_admin`='$id_user'";
+    $query_f = mysqli_query($koneksi,$sql_f);
+    while($data_f = mysqli_fetch_row($query_f)){
+        $foto = $data_f[0];
+        unlink("foto/$foto"); 
+    }
+    
+		$sql_dh = "delete from `admin` where `id_admin` = '$id_user'";
+		mysqli_query($koneksi,$sql_dh);
+	}
+}
+?>
+<div class="page-heading">
           <div class="page-title">
             <div class="row">
               <div class="col-12 col-md-6 order-md-1 order-last">
@@ -7,7 +26,7 @@
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="beranda.html">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Pengumuman</li>
                   </ol>
                 </nav>
@@ -17,254 +36,60 @@
           <section class="section">
             <div class="card">
               <div class="card-body">
-                <table class="table table-striped" id="table1">
+              <div class="col-12 d-flex justify-content-end">
+                <a href="tambah-info" class="btn btn-primary me-1 mb-1">Tambah Pengumuman</a>
+              </div>
+                <table class="table table-bordered mt-4" id="table1">
+                <?php if(!empty($_GET['notif'])){
+                    if($_GET['notif']=="berhasil"){?>
+                        <div class="alert alert-success" role="alert">
+                        Data Berhasil Ditambahkan</div>
+                    <?php }
+                  else if($_GET['notif']=="hapusberhasil"){?>
+                  <div class="alert alert-warning" role="alert">
+                        Data Berhasil Dihapus</div>
+                    <?php }
+                  else if($_GET['notif']=="editberhasil"){?>
+                    <div class="alert alert-success" role="alert">
+                          Data Berhasil Diedit</div>
+                      <?php }}?>
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>City</th>
-                      <th>Status</th>
+                      <th>No</th>
+                      <th>Judul</th>
+                      <th>Tanggal</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <?php 
+                      $posisi=0;
+                        $sql_k = "SELECT `id_pengumuman`,`judul`, `tanggal` FROM `pengumuman` ORDER BY `id_pengumuman` ";
+                        $query_k = mysqli_query($koneksi,$sql_k);
+                        $posisi+1;
+                        while($data_k = mysqli_fetch_row($query_k)){
+                          $id_pengumuman = $data_k[0];
+                          $judul = $data_k[1];
+                          $tanggal = $data_k[2];
+                      ?>
                     <tr>
-                      <td>Graiden</td>
-                      <td>vehicula.aliquet@semconsequat.co.uk</td>
-                      <td>076 4820 8838</td>
-                      <td>Offenburg</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Dale</td>
-                      <td>fringilla.euismod.enim@quam.ca</td>
-                      <td>0500 527693</td>
-                      <td>New Quay</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Nathaniel</td>
-                      <td>mi.Duis@diam.edu</td>
-                      <td>(012165) 76278</td>
-                      <td>Grumo Appula</td>
-                      <td>
-                        <span class="badge bg-danger">Inactive</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Darius</td>
-                      <td>velit@nec.com</td>
-                      <td>0309 690 7871</td>
-                      <td>Ways</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Oleg</td>
-                      <td>rhoncus.id@Aliquamauctorvelit.net</td>
-                      <td>0500 441046</td>
-                      <td>Rossignol</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Kermit</td>
-                      <td>diam.Sed.diam@anteVivamusnon.org</td>
-                      <td>(01653) 27844</td>
-                      <td>Patna</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Jermaine</td>
-                      <td>sodales@nuncsit.org</td>
-                      <td>0800 528324</td>
-                      <td>Mold</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ferdinand</td>
-                      <td>gravida.molestie@tinciduntadipiscing.org</td>
-                      <td>(016977) 4107</td>
-                      <td>Marlborough</td>
-                      <td>
-                        <span class="badge bg-danger">Inactive</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Kuame</td>
-                      <td>Quisque.purus@mauris.org</td>
-                      <td>(0151) 561 8896</td>
-                      <td>Tresigallo</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Deacon</td>
-                      <td>Duis.a.mi@sociisnatoquepenatibus.com</td>
-                      <td>07740 599321</td>
-                      <td>Karapınar</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Channing</td>
-                      <td>tempor.bibendum.Donec@ornarelectusante.ca</td>
-                      <td>0845 46 49</td>
-                      <td>Warrnambool</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Aladdin</td>
-                      <td>sem.ut@pellentesqueafacilisis.ca</td>
-                      <td>0800 1111</td>
-                      <td>Bothey</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cruz</td>
-                      <td>non@quisturpisvitae.ca</td>
-                      <td>07624 944915</td>
-                      <td>Shikarpur</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Keegan</td>
-                      <td>molestie.dapibus@condimentumDonecat.edu</td>
-                      <td>0800 200103</td>
-                      <td>Assen</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ray</td>
-                      <td>placerat.eget@sagittislobortis.edu</td>
-                      <td>(0112) 896 6829</td>
-                      <td>Hofors</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Maxwell</td>
-                      <td>diam@dapibus.org</td>
-                      <td>0334 836 4028</td>
-                      <td>Thane</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Carter</td>
-                      <td>urna.justo.faucibus@orci.com</td>
-                      <td>07079 826350</td>
-                      <td>Biez</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Stone</td>
-                      <td>velit.Aliquam.nisl@sitametrisus.com</td>
-                      <td>0800 1111</td>
-                      <td>Olivar</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Berk</td>
-                      <td>fringilla.porttitor.vulputate@taciti.edu</td>
-                      <td>(0101) 043 2822</td>
-                      <td>Sanquhar</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Philip</td>
-                      <td>turpis@euenimEtiam.org</td>
-                      <td>0500 571108</td>
-                      <td>Okara</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Kibo</td>
-                      <td>feugiat@urnajustofaucibus.co.uk</td>
-                      <td>07624 682306</td>
-                      <td>La Cisterna</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Bruno</td>
-                      <td>elit.Etiam.laoreet@luctuslobortisClass.edu</td>
-                      <td>07624 869434</td>
-                      <td>Rocca d"Arce</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Leonard</td>
-                      <td>blandit.enim.consequat@mollislectuspede.net</td>
-                      <td>0800 1111</td>
-                      <td>Lobbes</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Hamilton</td>
-                      <td>mauris@diam.org</td>
-                      <td>0800 256 8788</td>
-                      <td>Sanzeno</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Harding</td>
-                      <td>Lorem.ipsum.dolor@etnetuset.com</td>
-                      <td>0800 1111</td>
-                      <td>Obaix</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Emmanuel</td>
-                      <td>eget.lacus.Mauris@feugiatSednec.org</td>
-                      <td>(016977) 8208</td>
-                      <td>Saint-Remy-Geest</td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
+                        <td><?php echo $posisi+1; ?></td>
+                        <td><?php echo $judul; ?></td>
+                        <td><?php echo $tanggal; ?></td>
+                        
+                        <td align="center">
+                          <a href="edit-pengumuman_<?php echo $id_pengumuman;?>" class="btn btn-xs btn-info" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a href="detail-pengumuman_<?php echo $id_pengumuman;?>" class="btn btn-xs btn-info" title="Detail"><i class="bi bi-eye"></i></a>
+                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $judul; ?>?'))window.location.href='pengumuman_hapus_<?php echo $id_pengumuman;?>_hapusberhasil'" class="btn btn-xs btn-warning"><i class="bi bi-trash"></i> Hapus
+                      </a>
+                        </td>
+                      </tr>
+                      <?php $posisi++; }?>
                   </tbody>
                 </table>
+                
               </div>
             </div>
           </section>
         </div>
+
