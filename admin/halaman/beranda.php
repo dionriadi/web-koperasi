@@ -1,4 +1,30 @@
-      <!-- menu beranda -->
+<?php 
+$id_user = $_SESSION['id_user'];
+//get profil admin
+$sql = "select `nama`,`foto`,`username` from `admin` where `id_admin`='$id_user'";
+$query = mysqli_query($koneksi, $sql);
+while($data = mysqli_fetch_row($query)){
+	$nama = $data[0];
+	$foto = $data[1];
+  $username = $data[2];
+}
+
+//get pengumuman
+$sql = "select `isi` from `pengumuman` where `id_pengumuman`='1'";
+$query = mysqli_query($koneksi, $sql);
+while($data = mysqli_fetch_row($query)){
+	$isi = $data[0];
+}
+
+// mengambil data anggota
+$data_anggota = mysqli_query($koneksi,"SELECT `id_anggota` FROM anggota"); 
+// menghitung data anggota
+$jumlah_anggota = mysqli_num_rows($data_anggota);
+
+
+?>
+
+<!-- menu beranda -->
         <div class="page-heading">
           <h3>Beranda</h3>
         </div>
@@ -17,7 +43,7 @@
                         </div>
                         <div class="col-md-8">
                           <h6 class="text-muted font-semibold">Anggota</h6>
-                          <h6 class="font-extrabold mb-0">112.000</h6>
+                          <h6 class="font-extrabold mb-0"><?php echo $jumlah_anggota; ?></h6>
                         </div>
                       </div>
                     </div>
@@ -65,7 +91,7 @@
                       <h4>Pengumuman</h4>
                     </div>
                     <div class="card-body">
-                      <p>Batas pembayaran Untuk peminjaman terakhir pada tanggal 10 - 20</p>
+                      <p><?php echo $isi;?></p>
                     </div>
                   </div>
                 </div>
@@ -74,16 +100,16 @@
             <div class="col-12 col-lg-3">
               <div class="card">
                 <div class="card-header">
-                  <h4>User</h4>
+                  <h4>Admin</h4>
                 </div>
                 <div class="card-content pb-4">
                   <div class="recent-message d-flex px-4 py-3">
                     <div class="avatar avatar-xl">
-                      <img src="assets/images/faces/1.jpg" alt="Face 1" />
+                      <img src="foto/dion.png" alt="Face 1" />
                     </div>
                     <div class="ms-3 name">
-                      <h5 class="font-bold">Dion</h5>
-                      <h6 class="text-muted mb-0">@username</h5>
+                      <h5 class="font-bold"><?php echo $nama;?></h5>
+                      <h6 class="text-muted mb-0"><?php echo $username;?></h5>
                     </div>
                   </div>
                 </div>
