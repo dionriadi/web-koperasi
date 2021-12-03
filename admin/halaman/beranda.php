@@ -105,7 +105,7 @@ $jumlah_anggota = mysqli_num_rows($data_anggota);
                 <div class="card-content pb-4">
                   <div class="recent-message d-flex px-4 py-3">
                     <div class="avatar avatar-xl">
-                      <img src="foto/dion.png" alt="Face 1" />
+                      <img src="foto/<? echo $foto; ?>" alt="Face 1" />
                     </div>
                     <div class="ms-3 name">
                       <h5 class="font-bold"><?php echo $nama;?></h5>
