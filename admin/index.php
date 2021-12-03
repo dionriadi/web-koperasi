@@ -96,6 +96,12 @@ if(isset($_GET["halaman"])){
               include("halaman/edit-pengumuman.php");
             }else if($halaman=="detail-info"){
               include("halaman/detail-pengumuman.php");
+            
+          //manajemen anggota
+            }else if($halaman=="atur-user"){
+              include("halaman/pengaturan-user.php");
+            }else if($halaman=="detail-member"){
+              include("halaman/detail-user.php");
             }
         ?>
         
