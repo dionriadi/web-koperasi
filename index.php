@@ -7,7 +7,13 @@
 	</head>
     <!-- head -->
 
-
+	<!-- konten -->
+		<?php 
+		//pemanggilan konten halaman index
+			if(isset($_GET["halaman"])){
+				$halaman = $_GET["halaman"];
+				if($halaman=="beranda"){			
+			?>
     <!-- body -->
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -16,28 +22,21 @@
             <?php include("includes/sidebar.php"); ?> 
 		</nav>
         <!-- sidebar -->
-
-		<!-- konten -->
-		<?php 
-			//pemanggilan konten halaman index
-			if(isset($_GET["halaman"])){
-				$halaman = $_GET["halaman"];
-				if($halaman=="detail-buku"){
-					include("halaman/detailbuku.php");
-				}else if($halaman=="detail-blog"){    
-					include("halaman/detailblog.php");
-				}else if($halaman=="about-us"){    
-					include("halaman/aboutus.php");
-				}else if($halaman=="blog"){    
-					include("halaman/blog.php");
-				}else{
-					include("halaman/beranda.php");
-				}
+				<?php
+				include("halaman/beranda.php");
+			}else if($halaman=="masuk"){    
+				include("halaman/login.php");
+			}else if($halaman=="daftar"){    
+				include("halaman/signin.php");
+			}else if($halaman=="blog"){    
+				include("halaman/blog.php");
 			}else{
-			include("halaman/beranda.php");
+				include("halaman/beranda.php");
 			}
-			?>
-			<?php include("halaman/beranda.php"); ?>
+		}else{
+		include("halaman/beranda.php");
+		}?>
+
 		<!-- konten -->
 		<footer class="footer">
             <?php include("includes/footer.php"); ?>

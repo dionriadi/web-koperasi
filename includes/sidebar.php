@@ -19,7 +19,7 @@
 							<a class="nav-link" href="#about">Tentang Kami</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#projects">Projects</a>
+							<a class="nav-link" href="index.php?halaman=masuk">Login</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#testimonial">Pengumuman</a>
