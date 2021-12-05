@@ -1,15 +1,10 @@
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Horizontal - Mazer Admin Dashboard</title>
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="admin/assets/css/bootstrap.css">
-    
-<link rel="stylesheet" href="admin/assets/vendors/iconly/bold.css">
-
-    <link rel="stylesheet" href="admin/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="admin/assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="admin/assets/css/app.css">
-    <link rel="shortcut icon" href="admin/assets/images/favicon.svg" type="image/x-icon">
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Marshmallow Bootstrap Admin Dashboard Template</title>
+		<link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+		<link rel="stylesheet" href="vendors/owl.carousel/css/owl.carousel.css">
+		<link rel="stylesheet" href="vendors/owl.carousel/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="vendors/aos/css/aos.css">
+		<link rel="stylesheet" href="vendors/jquery-flipster/css/jquery.flipster.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="images/favicon.png" />

@@ -1,7 +1,5 @@
-<script src="admin/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script src="admin/assets/js/bootstrap.bundle.min.js"></script>
-    
-<script src="admin/assets/vendors/apexcharts/apexcharts.js"></script>
-<script src="admin/assets/js/pages/dashboard.js"></script>
-
-<script src="admin/assets/js/pages/horizontal-layout.js"></script>
+<script src="vendors/base/vendor.bundle.base.js"></script>
+		<script src="vendors/owl.carousel/js/owl.carousel.js"></script>
+		<script src="vendors/aos/js/aos.js"></script>
+		<script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
+		<script src="js/template.js"></script>

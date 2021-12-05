@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- head -->
-<head>
-<?php include("includes/head.php"); ?>
-</head>
-<!-- head -->
+    <!-- head -->
+	<head>
+		<!-- Required meta tags --> 
+		<?php include("includes/head.php"); ?> 
+	</head>
+    <!-- head -->
 
-<body>
-    <div id="app">
-        <div id="main" class="layout-horizontal">
-            <!-- header -->
-            <header class="mb-5">
-            <?php include("includes/header.php");?>
-                <!-- navigasi -->
-                <?php include("includes/sidebar.php"); ?>
-                <!-- navigasi -->
 
-            </header>
-            <!-- header -->
+    <!-- body -->
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-            <!-- isi -->
-            <div class="content-wrapper container">
-                
-            </div>
+        <!-- sidebar -->
+		<nav class="navbar navbar-expand-lg fixed-top">
+            <?php include("includes/sidebar.php"); ?> 
+		</nav>
+        <!-- sidebar -->
 
-            <footer>
+		<!-- konten -->
+		<?php 
+			//pemanggilan konten halaman index
+			if(isset($_GET["halaman"])){
+				$halaman = $_GET["halaman"];
+				if($halaman=="detail-buku"){
+					include("halaman/detailbuku.php");
+				}else if($halaman=="detail-blog"){    
+					include("halaman/detailblog.php");
+				}else if($halaman=="about-us"){    
+					include("halaman/aboutus.php");
+				}else if($halaman=="blog"){    
+					include("halaman/blog.php");
+				}else{
+					include("halaman/beranda.php");
+				}
+			}else{
+			include("halaman/beranda.php");
+			}
+			?>
+			<?php include("halaman/beranda.php"); ?>
+		<!-- konten -->
+		<footer class="footer">
             <?php include("includes/footer.php"); ?>
-            </footer>
-        </div>
-    </div>
-    <!-- script -->
-    <?php include("includes/script.php"); ?>
-    <!-- script -->
-</body>
-
+		</footer>
+        
+            <?php include("includes/script.php"); ?>
+        
+		
+	</body>
+    <!-- body -->
 </html>
