@@ -20,7 +20,14 @@
         <div id="auth-left">
             <h1 class="auth-title">Log in.</h1>
             
-            <form action="index.html">
+            <form action="konfirmasi-login" method="post">
+            <?php if((!empty($_GET['halaman'])) && (!empty($_GET['notif']))){?>
+              <?php if(($_GET['halaman']=="login") && $_GET['notif']=="salah"){?>
+                <span class="text-danger">
+                  Username dan Password Tidak Sesuai
+                </span>
+            <?php }?>
+            <?php }?>
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" class="form-control form-control-xl" placeholder="Username" required>
                     <div class="form-control-icon">
@@ -36,7 +43,7 @@
                 <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
             </form>
             <div class="text-center mt-5 text-lg fs-4">
-                <p class="text-gray-600">Belum punya akun? <a href="index.php?halaman=daftar" class="font-bold">Sign
+                <p class="text-gray-600">Belum punya akun? <a href="daftar" class="font-bold">Sign
                         up</a>.</p>
             </div>
         </div>
