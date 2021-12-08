@@ -7,8 +7,8 @@ if(isset($_GET["halaman"])){
     if($halaman=="konfirmasi-login"){
       include("halaman/konfirmasi-login.php");
     }
-    else if($halaman=="sign-out"){
-      include("halaman/signout.php");
+    else if($halaman=="keluar"){
+      include("halaman/sign-out.php");
     }
     // konfirmasi manajemen profil
     else if($halaman=="konfirmasi-edit-profil"){
@@ -82,8 +82,8 @@ if(isset($_GET["halaman"])){
               include("halaman/profil.php");
             }else if($halaman=="edit-profil"){
               include("halaman/edit-profil.php");
-            }else if($halaman=="ubah-password"){
-              include("halaman/ubah-password.php");
+            }else if($halaman=="ganti-sandi"){
+              include("halaman/ubah-pass.php");
             
           //manajemen pengumuman
             }else if($halaman=="info"){
