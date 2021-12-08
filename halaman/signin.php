@@ -95,8 +95,7 @@
                               <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                               <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                             </div>
-                    
-                      
+                      </div>
                     </div>
                     </form>
                   </div>

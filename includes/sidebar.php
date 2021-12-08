@@ -56,7 +56,7 @@
                     </a>
                   </li>
                   <li class="sidebar-item">
-                  <a href="sign-out" class="sidebar-link">
+                  <a href="keluar" class="sidebar-link">
                     <i class="bi bi-box-arrow-right"></i>
                     <span>Sign-Out</span>
                   </a>
