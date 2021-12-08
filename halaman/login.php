@@ -29,13 +29,13 @@
             <?php }?>
             <?php }?>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="text" class="form-control form-control-xl" placeholder="Username" required>
+                    <input type="text" class="form-control form-control-xl" placeholder="Username" name="username" required>
                     <div class="form-control-icon">
                         <i class="bi bi-person"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="password" class="form-control form-control-xl" placeholder="Password" required>
+                    <input type="password" class="form-control form-control-xl" placeholder="Password" name="pass" required>
                     <div class="form-control-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>
