@@ -15,11 +15,9 @@ if(isset($_GET["halaman"])){
       include("halaman/konfirmasi-edit-profil.php");
     }else if($halaman=="konfirmasi-password"){
       include("halaman/konfirmasi-password.php");
-    // konfirmasi manajemen admin
-    }else if($halaman=="konfirmasi-edit-admin"){
-      include("halaman/konfirmasi-edit-admin.php");
-    }else if($halaman=="konfirmasi-tambah-admin"){
-      include("halaman/konfirmasi-tambah-admin.php");
+    // konfirmasi pendaftaran
+    }else if($halaman=="konfirmasi-daftar"){
+      include("halaman/konfirmasi-sign-in.php");
     // konfirmasi manajemen pengumuman
     }else if($halaman=="konfirmasi-tambah-info"){
       include("halaman/konfirmasi-tambah-pengumuman.php");
@@ -119,11 +117,15 @@ if(isset($_GET["halaman"])){
     <!-- script -->
   </body>
   <?php
+  }else if($halaman=="daftar"){
+    include("halaman/signin.php");
+  }else if($halaman=="sukses"){
+    include("halaman/sukses-sign-in.php");
   	}else{
     //pemanggilan halaman form login
       include("halaman/login.php");
   	}  
-}else{
+  }else{
   if(isset($_SESSION['id_user'])){
   //pemanggilan ke halaman-halaman profil jika ada session  ?>
    <body>

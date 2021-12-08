@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="admin/assets/css/app.css" />
     <link rel="shortcut icon" href="admin/assets/images/favicon.svg" type="image/x-icon" />
 </head>
-<body>
+<body style="margin-top:20px;">
 <div class="container">      
 <div class="page-heading">
 
@@ -27,9 +27,9 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h5 class="card-title" style="color: white; background-color: rgb(93, 93, 146); padding: 20px; border-radius: 10px;">Form Tambah Admin</h5>
+                    <h5 class="card-title" style="color: white; background-color: rgb(93, 93, 146); padding: 20px; border-radius: 10px;">Form Pendaftaran Anggota</h5>
                     <div class="col-12 d-flex justify-content-end">
-                      <a href="atur-admin" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+                      <a href="masuk" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
                     </div>
                     <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
                     <?php if($_GET['notif']=="kosong"){?>
@@ -39,46 +39,55 @@
                   </div>
                   
                   <div class="card-content">
-                    <form class="form form-vertical" action="konfirmasi-tambah-admin" method="post" enctype="multipart/form-data">
+                    <form class="form form-vertical" action="konfirmasi-daftar" method="post" enctype="multipart/form-data">
                       <div class="card-body">
                         <div class="form-group row">
                           <label for="nama" class="col-sm-3 col-form-label">Nama Lengkap</label>
                             <div class="col-sm-7">
-                              <input type="text" class="form-control" name="nama" id="nama" value="">
+                              <input type="text" class="form-control" name="nama" id="nama" value="" required>
                             </div>
                         </div>
                         <div class="form-group row">
                           <label for="username" class="col-sm-3 col-form-label">Username</label>
                             <div class="col-sm-7">
-                              <input type="text" class="form-control" name="username" id="username" value="">
+                              <input type="text" class="form-control" name="username" id="username" value="" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control" name="alamat" id="alamat" value="" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="no_hp" class="col-sm-3 col-form-label">Nomor Telepon</label>
+                            <div class="col-sm-7">
+                              <input type="number" class="form-control" name="telp" id="telp" value="" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="pekerjaan" class="col-sm-3 col-form-label">Pekerjaan</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control" name="pekerjaan" id="alamat" value="" required>
                             </div>
                         </div>
                         <div class="form-group row">
                           <label for="email" class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-7">
-                              <input type="email" class="form-control" name="email" id="email" value="">
+                              <input type="email" class="form-control" name="email" id="email" value="" required>
                             </div>
                         </div>
                         <div class="form-group row">
                           <label for="password" class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-7">
-                              <input type="password" class="form-control" name="password" id="password" value="">
+                              <input type="password" class="form-control" name="password" id="password" value="" required>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="level" class="col-sm-3 col-form-label">Level</label>
-                          <div class="col-sm-7">
-                            <select class="form-control" id="level" name="level">
-                              <option value="Superadmin">Superadmin</option>
-                              <option value="Admin">Admin</option>
-                            </select>
-                          </div>
                         </div>
                         <div class="form-group row">
                           <label for="foto" class="col-sm-3 col-form-label">Foto </label>
                           <div class="col-sm-7">
                             <div class="custom-file">
-                              <input type="file" class="basic-filepond" name="foto" id="customFile">
+                              <input type="file" class="basic-filepond" name="foto" id="customFile" required>
                             </div>  
                           </div>
                         </div>
