@@ -40,6 +40,8 @@
                       </li>
                       <li class="submenu-item">
                         <a href="pinjaman">Pinjaman</a>
+                      </li><li class="submenu-item">
+                        <a href="riwayat">Riwayat</a>
                       </li>
                     </ul>
                   </li>

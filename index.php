@@ -23,7 +23,15 @@ if(isset($_GET["halaman"])){
       include("halaman/konfirmasi-tambah-pengumuman.php");
     }else if($halaman=="konfirmasi-edit-info"){
       include("halaman/konfirmasi-edit-pengumuman.php");
+    //konfirmasi transaksi
+    }else if($halaman=="konfirmasi-nabung"){
+    include("halaman/konfirmasi-tabungan.php");
+    }else if($halaman=="bukti-simpan"){
+      include("halaman/cetak-tabungan.php");
+    }else if($halaman=="tabung-berhasil"){
+      include("halaman/sukses-tabung.php");
     }
+    
   }
 ?>
 
@@ -62,13 +70,21 @@ if(isset($_GET["halaman"])){
                 include("halaman/beranda.php");
             }else if($halaman=="pengaturan-user"){
                 include("halaman/pengaturan-user.php");
+            //manajemen tabungan
             }else if($halaman=="tabungan"){
                 include("halaman/tabungan.php");
+            //manajemen pinjaman
             }else if($halaman=="pinjaman"){
               include("halaman/pinjaman.php");
-            }else if($halaman=="pengumuman"){
-              include("halaman/pengumuman.php");
-          //manajemen admin
+            }else if($halaman=="ambil-pinjam"){
+              include("halaman/ambil-pinjaman.php");
+            //manajemen riwayat
+            }else if($halaman=="riwayat"){
+              include("halaman/riwayat.php");
+            //manajemen riwayat
+            }else if($halaman=="detail-proses"){
+              include("halaman/detail-transaksi.php");
+            //manajemen admin
             }else if($halaman=="atur-admin"){
               include("halaman/pengaturan-admin.php");
             }else if($halaman=="tambah-admin"){
@@ -117,11 +133,12 @@ if(isset($_GET["halaman"])){
     <!-- script -->
   </body>
   <?php
+  
   }else if($halaman=="daftar"){
     include("halaman/signin.php");
   }else if($halaman=="sukses"){
     include("halaman/sukses-sign-in.php");
-  	}else{
+  }else{
     //pemanggilan halaman form login
       include("halaman/login.php");
   	}  
