@@ -25,11 +25,10 @@ if(isset($_GET["halaman"])){
       include("halaman/konfirmasi-edit-pengumuman.php");
     //konfirmasi transaksi
     }else if($halaman=="konfirmasi-nabung"){
-    include("halaman/konfirmasi-tabungan.php");
-    }else if($halaman=="bukti-simpan"){
-      include("halaman/cetak-tabungan.php");
-    }else if($halaman=="tabung-berhasil"){
-      include("halaman/sukses-tabung.php");
+      include("halaman/konfirmasi-tabungan.php");
+    //konfirmasi ambil hutang
+    }else if($halaman=="konfirmasi-pinjam"){
+      include("halaman/konfir-hutang.php");
     }
     
   }

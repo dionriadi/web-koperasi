@@ -48,14 +48,14 @@ while($data = mysqli_fetch_row($query)){
                   
                   <div class="card-content">
                     <div class="card-body">
-                      <form class="form form-vertical" action="konfirmasi-edit-profil" method="post" enctype="multipart/form-data">
+                      <form class="form form-vertical" action="konfirmasi-pinjam" method="post" enctype="multipart/form-data">
                         <div class="form-body">
                           <div class="row">
                             <div class="col-12">
                         <div class="form-group row">
                           <label for="nominal" class="col-sm-3 col-form-label">Nominal</label>
                             <div class="col-sm-7">
-                              <input type="number" class="form-control" name="uang" id="username" placeholder="Minimal Peminjaman 50.000"" >
+                              <input type="number" class="form-control" name="nominal" id="nominal" placeholder="Minimal Peminjaman 50.000"" >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -63,6 +63,14 @@ while($data = mysqli_fetch_row($query)){
                             <div class="col-sm-7">
                               <input type="date" class="form-control" name="tgl" id="username" >
                             </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="foto" class="col-sm-3 col-form-label">Foto Bukti Persyaratan </label>
+                          <div class="col-sm-7">
+                            <div class="custom-file">
+                              <input type="file" class="basic-filepond" name="foto" id="customFile" required >
+                            </div>  
+                          </div>
                         </div>
                             <div class="col-12 d-flex justify-content-end">
                               <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
