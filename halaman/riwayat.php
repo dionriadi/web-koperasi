@@ -30,7 +30,7 @@
                   <?php 
                   $id_anggota= $_SESSION['id_user'];
                       $posisi=0;
-                        $sql_k = "SELECT `id_transaksi`,`jenis_pembayaran`, `jumlah_pembayaran`FROM `transaksi` WHERE id_anggota='$id_anggota' ORDER BY `id_anggota` DESC ";
+                        $sql_k = "SELECT `id_transaksi`,`jenis_pembayaran`, `jumlah_pembayaran`FROM `transaksi` WHERE id_anggota='$id_anggota' ORDER BY `tgl_transaksi` DESC ";
                         $query_k = mysqli_query($koneksi,$sql_k);
                         $posisi+1;
                         while($data_k = mysqli_fetch_row($query_k)){
