@@ -22,7 +22,7 @@
           $sql_t = "INSERT INTO transaksi (id_anggota,jenis_pembayaran, tgl_transaksi, jumlah_pembayaran) 
                   values ('$id_anggota','$jenis_bayar','$tgl', '$nominal')";
                   mysqli_query($koneksi,$sql_t);
-        header("location:tabung-berhasil");	
+        header("location:tabungan_berhasil_info");	
         }
             
     

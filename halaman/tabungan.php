@@ -42,9 +42,8 @@ while($data = mysqli_fetch_row($query)){
                     <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
                     <?php if($_GET['notif']=="kosong"){?>
                         <div class="alert alert-danger mt-5">Maaf data <?php echo $_GET['jenis'];?> wajib di isi</div>
-                    <?php ?>
-                    <?php }else if($_GET['notif']=="kurang"){?>
-                        <div class="alert alert-danger mt-5">Maaf data masukkan nominal minimal 50.000</div>
+                    <?php }else if($_GET['notif']=="berhasil"){?>
+                        <div class="alert alert-success mt-5">Berhasil Menyimpan Tabungan</div>
                     <?php }?>
                     <?php }?>
                   </div>
