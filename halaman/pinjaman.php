@@ -12,19 +12,20 @@ while($data = mysqli_fetch_row($query)){
   $alamat = $data[4];
   $pekerjaan = $data[5];
 }
+
 ?>
         <div class="page-heading">
           <div class="page-title">
             <div class="row">
               <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Peminjaman</h3>
+                <h3>Pinjaman</h3>
                 
               </div>
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Peminjaman</li>
+                    <li class="breadcrumb-item active" aria-current="page">Bayar Pinjaman</li>
                   </ol>
                 </nav>
               </div>
@@ -48,33 +49,33 @@ while($data = mysqli_fetch_row($query)){
                   
                   <div class="card-content">
                     <div class="card-body">
-                      <form class="form form-vertical" action="konfirmasi-edit-profil" method="post" enctype="multipart/form-data">
+                      <form class="form form-vertical" action="konfirmasi-pinjam" method="post" enctype="multipart/form-data">
                         <div class="form-body">
                           <div class="row">
                             <div class="col-12">
                         <div class="form-group row">
-                            <label for="kategori" class="col-sm-3 col-form-label">Jenis Tabungan</label>
+                            <label for="tagihan" class="col-sm-3 col-form-label">Tagihan</label>
                             <div class="col-sm-7">
-                            <select class="form-control" id="kategori" name = "kategori">
-                                <option value="">--Pilih Jenis Tabungan--</option>
+                            <select class="form-control" id="tagihan" name = "tagihan">
+                                <option value="">--Pilih Tagihan--</option>
                                 <?php 
-                                $tabungan = mysqli_query($koneksi, "select * from jenis_simpanan");
-                                while($row=mysqli_fetch_array($tabungan)){?>
-                                <option value="<?php echo $row['id_jenis_simpanan']; ?>"><?php echo $row['jenis_simpanan']; ?></option>
+                                $pinjaman = mysqli_query($koneksi, "select * from pinjaman where id_anggota='$id_user' and keterangan='belum' order by batas_bayar ASC");
+                                while($row=mysqli_fetch_array($pinjaman)){?>
+                                <option value="<?php echo $row['id_pinjaman']; ?>"><?php echo "Rp.".number_format($row['jumlah_pinjaman'])." ---batas bayar--- ".$row['batas_bayar']; ?></option>
                                 <?php }?>
                             </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                          <label for="username" class="col-sm-3 col-form-label">Nominal</label>
+                          <label for="nominal" class="col-sm-3 col-form-label">Nominal</label>
                             <div class="col-sm-7">
-                              <input type="number" class="form-control" name="username" id="username" placeholder="Masukkan minimal 50.000"" >
+                              <input type="text" class="form-control" name="nominal" id="nominal" placeholder="Masukkan sesuai dengan tagihan">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="kategori" class="col-sm-3 col-form-label">Jenis Tabungan</label>
+                            <label for="metode" class="col-sm-3 col-form-label">Metode Pembayaran</label>
                             <div class="col-sm-7">
-                            <select class="form-control" id="kategori" name = "kategori">
+                            <select class="form-control" id="metode" name = "metode">
                                 <option value="">--Pilih Metode Pembayaran--</option>
                                 <?php 
                                 $metode = mysqli_query($koneksi, "select * from metode_pembayaran");
