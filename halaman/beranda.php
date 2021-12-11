@@ -10,18 +10,16 @@ while($data = mysqli_fetch_row($query)){
   $pinjaman = $data[3];
 }
 
-//get pengumuman
-$sql = "select `isi` from `pengumuman` where `id_pengumuman`='1'";
-$query = mysqli_query($koneksi, $sql);
-while($data = mysqli_fetch_row($query)){
-	$isi = $data[0];
-}
 
+//get total dana
 $sql_koperasi = "select `total_dana` from `total_dana` where `id_total`= 1";
 $query = mysqli_query($koneksi, $sql_koperasi);
 while($data = mysqli_fetch_row($query)){
 	$total = $data[0];
 }
+
+//get pengumuman
+$hasil=$koneksi->query("SELECT `isi`,`judul`, `cover` FROM `pengumuman` LIMIT 3");
 ?>
 
 <!-- menu beranda -->
@@ -76,34 +74,48 @@ while($data = mysqli_fetch_row($query)){
                         <div class="alert alert-success mt-5">Berhasil Menyimpan Tabungan</div>
                     <?php }?>
                     <?php }?>
-              <div class="row">
-                <div class="col-12">
-                <div class="card">
-          <div class="card-header">
-            <h4>Informasi Terkini</h4>
-          </div>
-          <div class="card-body">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-              </ol>
+
+      <!-- halaman berita -->
+        <div class="row">
+          <div class="col-12">
+             <div class="card">
+              <div class="card-header">
+                <h4>Informasi Terkini</h4>
+              </div>
+              <div class="card-body">
+              <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                  <?php
+                    $i=0;
+                    foreach($hasil as $row){
+                      $actives="";
+                      if($i==0){
+                        $actives="active";
+                      }
+                    
+                  ?>
+                  <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?= $i;?>" class="<?= $actives;?>"></li>
+                  <?php $i++;}?>
+                </ol>
               <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="admin/assets/images/samples/1.png" class="d-block w-100" alt="...">
+              <?php
+                    $i=0;
+                    foreach($hasil as $row){
+                      $actives="";
+                      if($i==0){
+                        $actives="active";
+                      }
+                    
+                  ?>
+                <div class="carousel-item <?= $actives;?>">
+                  <img src="admin/cover/<?= $row['cover'];?>" class="d-block w-100" alt="...">
+                  
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5><?= $row['judul'];?></h5>
+                    <p><?= $row['isi'];?></p>
                   </div>
                 </div>
-                <div class="carousel-item">
-                  <img src="foto/Screenshot (235).png" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                  </div>
-                </div>
+                <?php $i++;}?>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -113,12 +125,13 @@ while($data = mysqli_fetch_row($query)){
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </a>
+              
             </div>
           </div>
         </div>
       </div>
      </div>
-          </div>
+    </div>
             <div class="col-12 col-lg-3">
             <div class="card">
               <div class="card-header py-4 px-5">
