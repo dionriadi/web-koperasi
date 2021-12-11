@@ -64,10 +64,10 @@ if(isset($_GET["halaman"])){
                 include("halaman/beranda.php");
             }else if($halaman=="pengaturan-user"){
                 include("halaman/pengaturan-user.php");
-            }else if($halaman=="tabungan"){
-                include("halaman/tabungan.php");
-            }else if($halaman=="pinjaman"){
-              include("halaman/pinjaman.php");
+            }else if($halaman=="transaksi"){
+                include("halaman/transaksi.php");
+            }else if($halaman=="detail-proses"){
+                include("halaman/detail-transaksi.php");
             }else if($halaman=="pengumuman"){
               include("halaman/pengumuman.php");
           //manajemen admin

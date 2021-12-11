@@ -132,7 +132,7 @@ $hasil=$koneksi->query("SELECT `isi`,`judul`, `cover` FROM `pengumuman` ORDER BY
       </div>
      </div>
     </div>
-            <div class="col-12 col-lg-3">
+          <div class="col-12 col-lg-3">
             <div class="card">
               <div class="card-header py-4 px-5">
                       <h4>Halo, pengguna</h4>

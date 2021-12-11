@@ -35,19 +35,11 @@
                       <span>Daftar Anggota</span>
                     </a>
                   </li>
-                  <li class="sidebar-item has-sub">
-                    <a href="#" class="sidebar-link">
+                  <li class="sidebar-item">
+                    <a href="transaksi" class="sidebar-link">
                       <i class="bi bi-arrow-left-right"></i>
                       <span>Transaksi</span>
                     </a>
-                    <ul class="submenu">
-                      <li class="submenu-item">
-                        <a href="tabungan">Tabungan</a>
-                      </li>
-                      <li class="submenu-item">
-                        <a href="pinjaman">Pinjaman</a>
-                      </li>
-                    </ul>
                   </li>
                   <li class="sidebar-item">
                     <a href="pengumuman" class="sidebar-link">
