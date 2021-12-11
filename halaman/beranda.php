@@ -1,296 +1,199 @@
-<div class="page-body-wrapper">
-			<section id="home" class="home">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="main-banner">
-								<div class="d-sm-flex justify-content-between">
-									<div data-aos="zoom-in-up">
-										<div class="banner-title">
-												<h3 class="font-weight-medium">We Help Power
-												Millions Of Businesses 
-												in 100+ Countries
-											</h3>
-										</div>
-										<p class="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+<?php 
+$id_user = $_SESSION['id_user'];
+//get profil admin
+$sql = "select `nama_anggota`,`foto`,`username`,`total_pinjaman` from `anggota` where `id_anggota`='$id_user'";
+$query = mysqli_query($koneksi, $sql);
+while($data = mysqli_fetch_row($query)){
+	$nama = $data[0];
+	$foto = $data[1];
+  $username = $data[2];
+  $pinjaman = $data[3];
+}
 
-											<br>
-											Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-										</p>
-										<a href="#" class="btn btn-secondary mt-3">Learn more</a>
-									</div>
-									<div class="mt-5 mt-lg-0">
-										<img src="images/group.png" alt="marsmello" class="img-fluid" data-aos="zoom-in-up">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="our-services" id="services">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<h5 class="text-dark">We’re offering</h5>
-							<h3 class="font-weight-medium text-dark mb-5">Creative Digital Agency</h3>
-						</div>
-					</div>
-					<div class="row" data-aos="fade-up">
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="images/integrated-marketing.svg" alt="integrated-marketing" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Integrated 
-									Marketing
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box"   data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="images/design-development.svg" alt="design-development" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Design & 
-									Development
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="images/digital-strategy.svg" alt="digital-strategy" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Digital 
-									Strategy
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="row" data-aos="fade-up">
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box  pb-lg-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="images/digital-marketing.svg" alt="digital-marketing" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Digital 
-									Marketing
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box pb-lg-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="images/growth-strategy.svg" alt="growth-strategy" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Growth 
-									Strategy
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center text-lg-left">
-							<div class="services-box pb-0" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-								<img src="images/saving-strategy.svg" alt="saving-strategy" data-aos="zoom-in">
-								<h6 class="text-dark mb-3 mt-4 font-weight-medium">Saving 
-									Strategy
-								</h6>
-								<p>Lorem ipsum dolor sit amet, 
-									pretium pretium tempor.Lorem ipsum 
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="our-process" id="about">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6" data-aos="fade-up">
-							<h5 class="text-dark">Our work process</h5>
-							<h3 class="font-weight-medium text-dark">Discover New Idea With Us!</h3>
-							<h5 class="text-dark mb-3">Imagination will take us everywhere</h5>
-							<p class="font-weight-medium mb-4">Lorem ipsum dolor sit amet, <br> 
-								pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur
-							</p>
-							<div class="d-flex justify-content-start mb-3">
-								<img src="images/tick.png" alt="tick" class="mr-3 tick-icon"  >
-								<p class="mb-0">Lorem ipsum dolor sit amet, pretium pretium</p>
-							</div>
-							<div class="d-flex justify-content-start mb-3">
-								<img src="images/tick.png" alt="tick" class="mr-3 tick-icon"  >
-								<p class="mb-0">Lorem ipsum dolor sit amet, pretium pretium</p>
-							</div>
-							<div class="d-flex justify-content-start">
-								<img src="images/tick.png" alt="tick" class="mr-3 tick-icon"  >
-								<p class="mb-0">Lorem ipsum dolor sit amet, pretium pretium</p>
-							</div>
-						</div>
-						<div class="col-sm-6 text-right" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-							<img src="images/idea.png" alt="idea" class="img-fluid">
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="testimonial" id="testimonial">
-				<div class="container">
-					<div class="row  mt-md-0 mt-lg-4">
-						<div class="col-sm-6 text-white" data-aos="fade-up">
-							<p class="font-weight-bold mb-3">Testimonials</p>
-							<h3 class="font-weight-medium">Our customers are our <br>biggest fans</h3>
-							<ul class="flipster-custom-nav">
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link" title="0"></a>
-								</li>
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link"  title="1"></a>
-								</li>
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link active" title="2"></a>
-								</li>
-								<li class="flipster-custom-nav-item">
-									<a href="javascript:;" class="flipster-custom-nav-link"  title="3"></a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-sm-6" data-aos="fade-up">
-							<div id="testimonial-flipster">
-								<ul>
-									<li>
-										<div class="testimonial-item">
-											<img src="images/testimonial/testimonial1.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Mark Spenser</h6>
-											<p class="testimonial-destination">Accounts</p>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-item">
-											<img src="images/testimonial/testimonial2.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Tua Manuera</h6>
-											<p class="testimonial-destination">Director,Dj market</p>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-item">
-											<img src="images/testimonial/testimonial3.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Sarah Philip</h6>
-											<p class="testimonial-destination">Chief Accountant</p>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-item">
-											<img src="images/testimonial/testimonial4.jpg" alt="icon" class="testimonial-icons">
-											<p>Lorem ipsum dolor sit amet, consectetur
-												pretium pretium tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium
-											</p>
-											<h6 class="testimonial-author">Mark Spenser</h6>
-											<p class="testimonial-destination">Director,Dj market</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="pricing-list" id="plans">
-				<div class="container">
-					<div class="row" data-aos="fade-up" data-aos-offset="-500">
-						<div class="col-sm-12">
-							<div class="d-sm-flex justify-content-between align-items-center mb-2">
-								<div>
-									<h3 class="font-weight-medium text-dark ">Mari Mulai Aktivitas Anda</h3>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row"  data-aos="fade-up" data-aos-offset="-300">
-						<div class="col-sm-4">
-							<div class="pricing-box">
-								<img src="images/starter.svg" alt="starter">
-								<h6 class="font-weight-medium title-text">Pinjam dengan Bunga Ringan</h6>
-								<ul class="pricing-list">
-									<li>Penuhi Persyaratan</li>
-									<li>Klaim Nominal Peminjaman</li>
-									<li>Bayar Tepat Waktu</li>
-								</ul>
-								<a href="#" class="btn btn-outline-primary">Pinjam</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="pricing-box selected">
-								<img src="images/proffessional.svg" alt="starter">
-								<h6 class="font-weight-medium title-text">Daftar ke Koperasiku</h6>
-								<ul class="pricing-list">
-									<li>Buat Akun</li>
-									<li>Menabung</li>
-									<li>Meminjam</li>
-								</ul>
-								<a href="#" class="btn btn-primary">Daftar</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="pricing-box">
-								<img src="images/premium.svg" alt="starter">
-								<h6 class="font-weight-medium title-text">Menabung dengan Mudah</h6>
-								<ul class="pricing-list">
-									<li>Penuhi Persyaratan</li>
-									<li>Pilih Jenis Tabungan</li>
-									<li>Menabung Rutin</li>
-								</ul>
-								<a href="#" class="btn btn-outline-primary">Tabung</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="contactus" id="contact">
-				<div class="container">
-					<div class="row mb-5 pb-5">
-						<div class="col-sm-5" data-aos="fade-up" data-aos-offset="-500">
-							<img src="images/contact.jpg" alt="contact" class="img-fluid">
-						</div>
-						<div class="col-sm-7" data-aos="fade-up" data-aos-offset="-500">
-							<h3 class="font-weight-medium text-dark mt-5 mt-lg-0">Punya pertanyaan?</h3>
-							<h5 class="text-dark mb-5">Kirimkan pertanyaan-pertanyaan anda ke kami </h5>
-							<form>
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="text" class="form-control" id="name" placeholder="Nama" required>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="email" class="form-control" id="mail" placeholder="Email" required>
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<textarea name="message" id="message" class="form-control" placeholder="Pesan" rows="5" required></textarea>
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<a href="#" class="btn btn-secondary">Kirim</a>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
+//get pengumuman
+$sql = "select `isi` from `pengumuman` where `id_pengumuman`='1'";
+$query = mysqli_query($koneksi, $sql);
+while($data = mysqli_fetch_row($query)){
+	$isi = $data[0];
+}
+
+// mengambil data anggota
+$data_anggota = mysqli_query($koneksi,"SELECT `id_anggota` FROM anggota"); 
+// menghitung data anggota
+$jumlah_anggota = mysqli_num_rows($data_anggota);
+
+?>
+
+<!-- menu beranda -->
+        <div class="page-heading">
+          <h3>Beranda</h3>
+        </div>
+        <div class="page-content">
+          <section class="row">
+            <div class="col-12 col-lg-9">
+              <div class="row">
+                <div class="col-6 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body px-3 py-4-5">
+                      <div class="row">
+                        <div class="col-md-4">
+                        <div class="stats-icon blue">
+                          <i class="bi bi-wallet"></i>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <h6 class="text-muted font-semibold">Dana Koperasi</h6>
+                          <?php
+                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=1");
+                            while($data = mysqli_fetch_array($jumlah)) {
+                          ?>
+                          <h6 class="font-extrabold mb-0"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body px-3 py-4-5">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="stats-icon green">
+                            <i class="bi bi-cash-stack"></i>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <h6 class="text-muted font-semibold">Pinjaman</h6>
+                          <h6 class="font-extrabold mb-0"><?php echo "Rp." .$pinjaman  ;?></h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
+                    <?php if($_GET['notif']=="berhasil"){?>
+                      <div class="alert alert-success"><i class="bi bi-check-circle"></i> <?php echo $_GET['jenis'];?> berhasil</div>
+                    <?php }else if($_GET['notif']=="berhasil"){?>
+                        <div class="alert alert-success mt-5">Berhasil Menyimpan Tabungan</div>
+                    <?php }?>
+                    <?php }?>
+              <div class="row">
+                <div class="col-12">
+                <div class="card">
+          <div class="card-header">
+            <h4>Informasi Terkini</h4>
+          </div>
+          <div class="card-body">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="admin/assets/images/samples/1.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="foto/Screenshot (235).png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+          </div>
+            <div class="col-12 col-lg-3">
+            <div class="card">
+              <div class="card-header py-4 px-5">
+                      <h4>Halo, pengguna</h4>
+                    </div>
+                <div class="card-body py-4 px-5">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-xl">
+                            <img src="foto/<?php echo $foto;?>" alt="Face 1">
+                        </div>
+                        <div class="ms-3 name">
+                            <h5 class="font-bold"><?php echo $nama;?></h5>
+                            <h6 class="text-muted mb-0"><?php echo $username;?></h6>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card">
+                <div class="card-content pb-4">
+                  <div class="recent-message d-flex px-4 py-3">
+                    <div class="stats-icon red">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-safe" viewBox="0 0 16 16">
+                        <path d="M1 1.5A1.5 1.5 0 0 1 2.5 0h12A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 1 14.5V13H.5a.5.5 0 0 1 0-1H1V8.5H.5a.5.5 0 0 1 0-1H1V4H.5a.5.5 0 0 1 0-1H1V1.5zM2.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-12z"/>
+                        <path d="M13.5 6a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zM4.828 4.464a.5.5 0 0 1 .708 0l1.09 1.09a3.003 3.003 0 0 1 3.476 0l1.09-1.09a.5.5 0 1 1 .707.708l-1.09 1.09c.74 1.037.74 2.44 0 3.476l1.09 1.09a.5.5 0 1 1-.707.708l-1.09-1.09a3.002 3.002 0 0 1-3.476 0l-1.09 1.09a.5.5 0 1 1-.708-.708l1.09-1.09a3.003 3.003 0 0 1 0-3.476l-1.09-1.09a.5.5 0 0 1 0-.708zM6.95 6.586a2 2 0 1 0 2.828 2.828A2 2 0 0 0 6.95 6.586z"/>
+                      </svg>
+                    </div>
+                 
+                    <div class="name ms-4">
+                      <h5 class="mb-1">Simpanan Pokok</h5>
+                      <?php
+                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=2 and id_anggota='$id_user'");
+                            while($data = mysqli_fetch_array($jumlah)) {
+                      ?>
+                      <h6 class="text-muted mb-0"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></h6>
+                    </div>
+                  </div>
+                  <div class="recent-message d-flex px-4 py-3">
+                    <div class="stats-icon purple">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-safe" viewBox="0 0 16 16">
+                        <path d="M1 1.5A1.5 1.5 0 0 1 2.5 0h12A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 1 14.5V13H.5a.5.5 0 0 1 0-1H1V8.5H.5a.5.5 0 0 1 0-1H1V4H.5a.5.5 0 0 1 0-1H1V1.5zM2.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-12z"/>
+                        <path d="M13.5 6a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zM4.828 4.464a.5.5 0 0 1 .708 0l1.09 1.09a3.003 3.003 0 0 1 3.476 0l1.09-1.09a.5.5 0 1 1 .707.708l-1.09 1.09c.74 1.037.74 2.44 0 3.476l1.09 1.09a.5.5 0 1 1-.707.708l-1.09-1.09a3.002 3.002 0 0 1-3.476 0l-1.09 1.09a.5.5 0 1 1-.708-.708l1.09-1.09a3.003 3.003 0 0 1 0-3.476l-1.09-1.09a.5.5 0 0 1 0-.708zM6.95 6.586a2 2 0 1 0 2.828 2.828A2 2 0 0 0 6.95 6.586z"/>
+                      </svg>
+                    </div>
+                    <div class="name ms-4">
+                      <h5 class="mb-1">Simpanan Wajib</h5>
+                      <?php
+                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=1 and id_anggota='$id_user'");
+                            while($data = mysqli_fetch_array($jumlah)) {
+                      ?>
+                      <h6 class="text-muted mb-0"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></h6>
+                    </div>
+                  </div>
+                  <div class="recent-message d-flex px-4 py-3">
+                    <div class="stats-icon blue">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16">
+                      <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    </div>
+                 
+                    <div class="name ms-4">
+                      <h5 class="mb-1">Simpanan Sukarela</h5>
+                      <?php
+                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=3 and id_anggota='$id_user'");
+                            while($data = mysqli_fetch_array($jumlah)) {
+                      ?>
+                      <h6 class="text-muted mb-0"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></h6>
+                    </div>
+                  </div>
+             </div>
+            </div>
+          </section>
+
+        <!-- akhir bagian isi -->
