@@ -46,12 +46,6 @@
                     </ul>
                   </li>
                   <li class="sidebar-item">
-                    <a href="pengumuman" class="sidebar-link">
-                      <i class="bi bi-file-earmark-spreadsheet-fill"></i>
-                      <span>Pengumuman </span>
-                    </a>
-                  </li>
-                  <li class="sidebar-item">
                     <a href="profil" class="sidebar-link">
                       <i class="bi bi-person-circle"></i>
                       <span>Profil</span>
