@@ -23,8 +23,8 @@ while($data = mysqli_fetch_row($query)){
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Peminjaman</li>
+                    <li class="breadcrumb-item"><a href="pinjaman">Bayar Pinjaman</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ambil Pinjaman</li>
                   </ol>
                 </nav>
               </div>
@@ -38,7 +38,9 @@ while($data = mysqli_fetch_row($query)){
                 <div class="card">
                   <div class="card-header">
                     <h5 class="card-title" style="color: white; background-color: rgb(93, 93, 146); padding: 20px; border-radius: 10px;">Form Pengambilan Pinjaman</h5>
-
+                    <div class="col-12 d-flex justify-content-end">
+                      <a href="pinjaman" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+                    </div>
                     <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
                     <?php if($_GET['notif']=="kosong"){?>
                         <div class="alert alert-danger mt-5">Maaf data <?php echo $_GET['jenis'];?> wajib di isi</div>
@@ -48,7 +50,7 @@ while($data = mysqli_fetch_row($query)){
                   
                   <div class="card-content">
                     <div class="card-body">
-                      <form class="form form-vertical" action="konfirmasi-pinjam" method="post" enctype="multipart/form-data">
+                      <form class="form form-vertical" action="konfirmasi-ambil" method="post" enctype="multipart/form-data">
                         <div class="form-body">
                           <div class="row">
                             <div class="col-12">

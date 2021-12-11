@@ -26,11 +26,11 @@ if(isset($_GET["halaman"])){
     //konfirmasi transaksi
     }else if($halaman=="konfirmasi-nabung"){
       include("halaman/konfirmasi-tabungan.php");
-    }else if($halaman=="konfirmasi-ambil"){
-      include("halaman/konfirmasi-ambil-tabungan.php");
     //konfirmasi ambil hutang
     }else if($halaman=="konfirmasi-pinjam"){
-      include("halaman/konfir-hutang.php");
+      include("halaman/konfirmasi-bayar-pinjaman.php");
+    }else if($halaman=="konfirmasi-ambil"){
+      include("halaman/konfirmasi-ambil-pinjaman.php");
     }
     
   }
