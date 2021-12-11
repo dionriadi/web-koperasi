@@ -41,7 +41,7 @@
                     <tr>
                         <td><?php echo $posisi+1; ?></td>
                         <td><?php echo $jenis; ?></td>
-                        <td><?php echo $jumlah; ?></td>
+                        <td><?php echo "Rp. ".number_format($jumlah); ?></td>
                         <td align="center">
                           <a href="detail-proses_<?php echo $id_transaksi;?>" class="btn btn-xs btn-info" title="Detail"><i class="bi bi-eye"></i></a>
                         </td>

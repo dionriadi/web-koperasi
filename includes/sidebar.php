@@ -36,7 +36,7 @@
                     </a>
                     <ul class="submenu">
                       <li class="submenu-item">
-                        <a href="tabungan">Tabungan</a>
+                        <a href="tabungan">Simpanan</a>
                       </li>
                       <li class="submenu-item">
                         <a href="pinjaman">Pinjaman</a>

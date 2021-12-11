@@ -17,11 +17,11 @@ while($data = mysqli_fetch_row($query)){
 	$isi = $data[0];
 }
 
-// mengambil data anggota
-$data_anggota = mysqli_query($koneksi,"SELECT `id_anggota` FROM anggota"); 
-// menghitung data anggota
-$jumlah_anggota = mysqli_num_rows($data_anggota);
-
+$sql_koperasi = "select `total_dana` from `total_dana` where `id_total`= 1";
+$query = mysqli_query($koneksi, $sql_koperasi);
+while($data = mysqli_fetch_row($query)){
+	$total = $data[0];
+}
 ?>
 
 <!-- menu beranda -->
@@ -43,11 +43,8 @@ $jumlah_anggota = mysqli_num_rows($data_anggota);
                         </div>
                         <div class="col-md-8">
                           <h6 class="text-muted font-semibold">Dana Koperasi</h6>
-                          <?php
-                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=1");
-                            while($data = mysqli_fetch_array($jumlah)) {
-                          ?>
-                          <h6 class="font-extrabold mb-0"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></h6>
+                    
+                          <h6 class="font-extrabold mb-0"><?php echo "Rp." .number_format($total);?></h6>
                         </div>
                       </div>
                     </div>
@@ -64,8 +61,8 @@ $jumlah_anggota = mysqli_num_rows($data_anggota);
                           </div>
                         </div>
                         <div class="col-md-8">
-                          <h6 class="text-muted font-semibold">Pinjaman</h6>
-                          <h6 class="font-extrabold mb-0"><?php echo "Rp." .$pinjaman  ;?></h6>
+                          <h6 class="text-muted font-semibold">Pinjaman Anda</h6>
+                          <h6 class="font-extrabold mb-0"><?php echo "Rp." .number_format($pinjaman)  ;?></h6>
                         </div>
                       </div>
                     </div>

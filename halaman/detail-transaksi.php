@@ -63,7 +63,7 @@ $sql_k = "SELECT `id_transaksi`,`jenis_pembayaran`, `jumlah_pembayaran`, `tgl_tr
                       </tr>                
                       <tr>
                           <td width="20%"><strong>Nominal Pembayaran<strong></td>
-                          <td width="80%"><?php echo $jumlah;?></td>
+                          <td width="80%"><?php echo "Rp. ".number_format($jumlah);?></td>
                       </tr>
                     </tbody>
                   </table>  

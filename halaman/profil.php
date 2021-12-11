@@ -34,7 +34,8 @@ while($data = mysqli_fetch_row($query)){
 
           <!-- bagian isi -->
           <section id="basic-vertical-layouts">
-            <div class="col-md-6 col-sm-12">
+          <div class="row match-height">
+              <div class="col-12">
               <div class="card">
                 <div class="card-content">
                   <div class = "card-body">
@@ -65,6 +66,30 @@ while($data = mysqli_fetch_row($query)){
                           <td width="20%"><strong>Email<strong></td>
                           <td width="80%"><?php echo $email;?></td>
                       </tr> 
+                      <tr>
+                          <td width="20%"><strong>Simpanan Wajib<strong></td>
+                          <?php
+                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=1 and id_anggota='$id_user'");
+                            while($data = mysqli_fetch_array($jumlah)) {
+                          ?>
+                          <td width="80%"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></td>
+                      </tr>
+                      <tr>
+                          <td width="20%"><strong>Simpanan Pokok<strong></td>
+                          <?php
+                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=2 and id_anggota='$id_user'");
+                            while($data = mysqli_fetch_array($jumlah)) {
+                          ?>
+                          <td width="80%"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></td>
+                      </tr>
+                      <tr>
+                          <td width="20%"><strong>Simpanan Sukarela<strong></td>
+                          <?php
+                            $jumlah = mysqli_query($koneksi,"SELECT SUM(jumlah) FROM simpanan WHERE id_jenis_simpanan=3 and id_anggota='$id_user'");
+                            while($data = mysqli_fetch_array($jumlah)) {
+                          ?>
+                          <td width="80%"><?php echo "Rp." . number_format($data['SUM(jumlah)']) ;}?></td>
+                      </tr>
                     </tbody>
                   </table>  
                   
