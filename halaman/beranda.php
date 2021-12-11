@@ -19,7 +19,7 @@ while($data = mysqli_fetch_row($query)){
 }
 
 //get pengumuman
-$hasil=$koneksi->query("SELECT `isi`,`judul`, `cover` FROM `pengumuman` LIMIT 3");
+$hasil=$koneksi->query("SELECT `isi`,`judul`, `cover` FROM `pengumuman` ORDER BY `tanggal` DESC LIMIT 3");
 ?>
 
 <!-- menu beranda -->
