@@ -12,7 +12,7 @@ RewriteRule ^([-a-z]*)_([0-9]*)$ index.php?halaman=$1&data=$2 [L]
 RewriteRule ^([-a-z]*)_([-a-z]*)$ index.php?halaman=$1&notif=$2 [L]
 
 #halaman notif 2
-RewriteRule ^([-a-z]*)_([-a-z]*)_([-a-z]*)$ index.php?halaman=$1&notif=$2&jenis=$3 [L]
+RewriteRule ^([-a-z]*)_([-a-z]*)_([-a-zA-Z]*)$ index.php?halaman=$1&notif=$2&jenis=$3 [L]
 
 #halaman notif dengan data
 RewriteRule ^([-a-z]*)_([-a-z]*)_([0-9]*)_([-a-z]*)$ index.php?halaman=$1&aksi=$2&data=$3&notif=$4 [L]
