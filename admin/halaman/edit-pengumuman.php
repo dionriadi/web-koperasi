@@ -73,6 +73,14 @@ while($data = mysqli_fetch_row($query)){
                             <textarea class="form-control" name="isi" id="editor1" rows="12"><?php echo $isi;?></textarea>
                             </div>
                         </div>
+                        <div class="form-group row">
+                          <label for="cover" class="col-sm-3 col-form-label">Cover </label>
+                          <div class="col-sm-7">
+                            <div class="custom-file">
+                              <input type="file" class="basic-filepond" name="cover" id="customFile">
+                            </div>  
+                          </div>
+                        </div>
                             <div class="col-12 d-flex justify-content-end">
                               <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                               <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>

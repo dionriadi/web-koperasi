@@ -15,9 +15,25 @@ if(empty($judul)){
 	header("Location:edit-info_kosong_isi_$id_pengumuman");
 }
 else{
-	$sql = "INSERT INTO pengumuman (judul, isi, id_admin, tanggal) 
-	values ('$judul', '$isi', '$penulis', '$tgl')";
-	mysqli_query($koneksi,$sql);
-header("Location:info_berhasil");	
+	$lokasi_file = $_FILES['cover']['tmp_name'];
+		$nama_file = $_FILES['cover']['name'];
+		$direktori = 'cover/'.$nama_file;
+		if(move_uploaded_file($lokasi_file,$direktori)){
+            	   if(!empty($cover)){
+                     unlink("cover/$cover");
+                  }
+		   $sql = "update `pengumuman` set `id_admin`='$penulis', 
+                  `isi`='$isi', `cover`='$nama_file', `judul`= '$judul'
+                  where `id_pengumuman`='$id_pengumuman'";
+                  //echo $sql;
+		   mysqli_query($koneksi,$sql);
+		}else{
+		   $sql = "update `pengumuman` set `id_admin`='$penulis', 
+				  `isi`='$isi', `judul`= '$judul'
+				  where `id_pengumuman`='$id_pengumuman'";
+                  //echo $sql;
+		   mysqli_query($koneksi,$sql);
+		}
+header("Location:info_editberhasil");	
 }
 ?>

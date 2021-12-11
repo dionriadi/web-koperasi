@@ -1,19 +1,21 @@
 <?php 
 $id_pengumuman = $_GET['data'];
 
-$sql_k = "SELECT pengumuman.id_pengumuman ,pengumuman.judul, pengumuman.isi, pengumuman.tanggal,
+$sql_k = "SELECT pengumuman.id_pengumuman ,pengumuman.judul, pengumuman.isi, pengumuman.tanggal, pengumuman.cover,
     admin.id_admin, admin.nama FROM pengumuman join admin  on pengumuman.id_admin = admin.id_admin where `id_pengumuman`='$id_pengumuman'";
     $query_k = mysqli_query($koneksi,$sql_k);
     while($data_k = mysqli_fetch_array($query_k)){
       $judul = $data_k['judul'];
       $isi = $data_k['isi'];
       $tanggal = $data_k['tanggal'];
+      $cover = $data_k['cover'];
     }
     $sql_u = "SELECT admin.id_admin, pengumuman.id_admin, admin.nama  FROM pengumuman 
     join admin  on admin.id_admin = pengumuman.id_admin where `id_pengumuman`='$id_pengumuman'";
     $query_u = mysqli_query($koneksi,$sql_u);
     while($data_u = mysqli_fetch_array($query_u)){
       $penulis = $data_u['nama'];
+      
     }
 ?>
       <!-- sidebar -->
@@ -40,7 +42,7 @@ $sql_k = "SELECT pengumuman.id_pengumuman ,pengumuman.judul, pengumuman.isi, pen
 
           <!-- bagian isi -->
           <section id="basic-vertical-layouts">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-12">
               <div class="card">
                 <div class="card-header">
                 <div class="col-12 d-flex justify-content-end">
@@ -55,7 +57,11 @@ $sql_k = "SELECT pengumuman.id_pengumuman ,pengumuman.judul, pengumuman.isi, pen
                       <tr>
                         <td colspan="2"><i class="fas fa-user-circle"></i>  
                          <strong>Detail Admin<strong></td>
-                      </tr> 
+                      </tr>
+                      <tr>
+                        <td width="20%"><strong>Cover<strong></td>
+                        <td width="80%"><img src="cover/<?php echo $cover;?>" class="img-fluid" width="200px;"></td>
+                      </tr>  
                       <tr>
                         <td width="20%"><strong>Judul<strong></td>
                         <td width="80%"><?php echo $judul; ?></td>
