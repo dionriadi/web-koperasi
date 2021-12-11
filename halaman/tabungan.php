@@ -17,14 +17,14 @@ while($data = mysqli_fetch_row($query)){
           <div class="page-title">
             <div class="row">
               <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Pengisian Tabungan</h3>
+                <h3>Pembayaran Simpanan Koperasi</h3>
                 
               </div>
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Tambah Tabungan</li>
+                    <li class="breadcrumb-item active" aria-current="page">Pembayaran Simpanan</li>
                   </ol>
                 </nav>
               </div>
@@ -37,13 +37,13 @@ while($data = mysqli_fetch_row($query)){
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h5 class="card-title" style="color: white; background-color: rgb(93, 93, 146); padding: 20px; border-radius: 10px;">Form Pembayaran Tabungan</h5>
+                    <h5 class="card-title" style="color: white; background-color: rgb(93, 93, 146); padding: 20px; border-radius: 10px;">Form Pembayaran</h5>
 
                     <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
                     <?php if($_GET['notif']=="kosong"){?>
                         <div class="alert alert-danger mt-5 "><i class="bi bi-file-excel"></i>Maaf data <?php echo $_GET['jenis'];?> wajib di isi</div>
                     <?php }else if($_GET['notif']=="berhasil"){?>
-                        <div class="alert alert-success mt-5">Berhasil Menyimpan Tabungan</div>
+                        <div class="alert alert-success mt-5">Berhasil Menyimpan </div>
                     <?php }?>
                     <?php }?>
                   </div>
@@ -55,10 +55,10 @@ while($data = mysqli_fetch_row($query)){
                           <div class="row">
                             <div class="col-12">
                         <div class="form-group row">
-                            <label for="jenis" class="col-sm-3 col-form-label">Jenis Tabungan</label>
+                            <label for="jenis" class="col-sm-3 col-form-label">Jenis Simpanan</label>
                             <div class="col-sm-7">
                             <select class="form-control" id="jenis" name = "jenis">
-                                <option value="">--Pilih Jenis Tabungan--</option>
+                                <option value="">--Pilih Jenis Simpanan--</option>
                                 <?php 
                                 $tabungan = mysqli_query($koneksi, "select * from jenis_simpanan");
                                 while($row=mysqli_fetch_array($tabungan)){?>
@@ -94,7 +94,7 @@ while($data = mysqli_fetch_row($query)){
                         </div>
                       </form>
                     </div>
-                    <a href="ambil-dana"><button class="btn btn-info">Pengambilan Tabungan</button></a>
+                   
                   </div>
                 </div>
               </div>
