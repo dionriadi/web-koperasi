@@ -73,7 +73,7 @@
                           <label for="foto" class="col-sm-3 col-form-label">Foto </label>
                           <div class="col-sm-7">
                             <div class="custom-file">
-                              <input type="file" class="basic-filepond" name="foto" id="customFile">
+                              <input type="file" class="basic-filepond" name="foto" id="customFile" required>
                             </div>  
                           </div>
                         </div>
