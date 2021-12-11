@@ -9,7 +9,7 @@
         $tgl = date("Y-m-d");
       //mengambil data dari database
       if(empty($jenis)){
-	    header("Location:tabungan_kosong_jenis");
+	    header("Location:tabungan_kosong_jenis-tabungan");
         }else if(empty($nominal)){
             header("Location:tabungan_kosong_nominal");
         }else if(empty($metode)){

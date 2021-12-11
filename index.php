@@ -26,6 +26,8 @@ if(isset($_GET["halaman"])){
     //konfirmasi transaksi
     }else if($halaman=="konfirmasi-nabung"){
       include("halaman/konfirmasi-tabungan.php");
+    }else if($halaman=="konfirmasi-ambil"){
+      include("halaman/konfirmasi-ambil-tabungan.php");
     //konfirmasi ambil hutang
     }else if($halaman=="konfirmasi-pinjam"){
       include("halaman/konfir-hutang.php");
@@ -72,6 +74,8 @@ if(isset($_GET["halaman"])){
             //manajemen tabungan
             }else if($halaman=="tabungan"){
                 include("halaman/tabungan.php");
+            }else if($halaman=="ambil-dana"){
+              include("halaman/ambil-tabungan.php");
             //manajemen pinjaman
             }else if($halaman=="pinjaman"){
               include("halaman/pinjaman.php");

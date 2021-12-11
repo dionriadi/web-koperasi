@@ -17,14 +17,14 @@ while($data = mysqli_fetch_row($query)){
           <div class="page-title">
             <div class="row">
               <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Pengisian Tabungan</h3>
+                <h3>Pengambilan Tabungan</h3>
                 
               </div>
               <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="beranda">Beranda</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Tambah Tabungan</li>
+                    <li class="breadcrumb-item"><a href="tabungan">Tambah Tabungan</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ambil Tabungan</li>
                   </ol>
                 </nav>
               </div>
@@ -38,7 +38,9 @@ while($data = mysqli_fetch_row($query)){
                 <div class="card">
                   <div class="card-header">
                     <h5 class="card-title" style="color: white; background-color: rgb(93, 93, 146); padding: 20px; border-radius: 10px;">Form Pembayaran Tabungan</h5>
-
+                    <div class="col-12 d-flex justify-content-end">
+                      <a href="tabungan" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+                    </div>
                     <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
                     <?php if($_GET['notif']=="kosong"){?>
                         <div class="alert alert-danger mt-5 "><i class="bi bi-file-excel"></i>Maaf data <?php echo $_GET['jenis'];?> wajib di isi</div>
@@ -50,27 +52,15 @@ while($data = mysqli_fetch_row($query)){
                   
                   <div class="card-content">
                     <div class="card-body">
-                      <form class="form form-vertical" action="konfirmasi-nabung" method="post" enctype="multipart/form-data">
+                      
+                      <form class="form form-vertical" action="konfirmasi-ambil" method="post" enctype="multipart/form-data">
                         <div class="form-body">
                           <div class="row">
                             <div class="col-12">
                         <div class="form-group row">
-                            <label for="jenis" class="col-sm-3 col-form-label">Jenis Tabungan</label>
-                            <div class="col-sm-7">
-                            <select class="form-control" id="jenis" name = "jenis">
-                                <option value="">--Pilih Jenis Tabungan--</option>
-                                <?php 
-                                $tabungan = mysqli_query($koneksi, "select * from jenis_simpanan");
-                                while($row=mysqli_fetch_array($tabungan)){?>
-                                <option value="<?php echo $row['id_jenis_simpanan']; ?>"><?php echo $row['jenis_simpanan']; ?></option>
-                                <?php }?>
-                            </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
                           <label for="nominal" class="col-sm-3 col-form-label">Nominal</label>
                             <div class="col-sm-7">
-                              <input type="number" class="form-control" name="nominal" id="nominal" placeholder="Masukkan minimal 50.000"" >
+                              <input type="text" class="form-control" name="nominal" id="nominal" placeholder="Masukkan minimal 50.000" >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -86,6 +76,12 @@ while($data = mysqli_fetch_row($query)){
                             </select>
                             </div>
                         </div>
+                        <div class="form-group row">
+                          <label for="hp" class="col-sm-3 col-form-label">No Tujuan</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control" name="hp" id="nominal" placeholder="Masukkan nomor tujuan" >
+                            </div>
+                        </div>
                             <div class="col-12 d-flex justify-content-end">
                               <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                               <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
@@ -94,7 +90,7 @@ while($data = mysqli_fetch_row($query)){
                         </div>
                       </form>
                     </div>
-                    <a href="ambil-dana"><button class="btn btn-info">Pengambilan Tabungan</button></a>
+
                   </div>
                 </div>
               </div>
