@@ -42,10 +42,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama`, `email`, `username`, `password`, `level`, `foto`) VALUES
-(1, 'Dionysius Yudha Riadi', 'dionriadi@student.ub.ac.id', 'dion', '982c500a206551c665f746cc9e77a961', 'Superadmin', 'dion.png'),
-(2, 'Desi Fitriyyah', 'desifitriyyah25@student.ub.ac.id', 'desi', '069e2dd171f61ecffb845190a7adf425', 'Superadmin', 'desi.jpeg'),
-(4, 'Hafiza Kartikasari', 'hafizaka@student.ub.ac.id', 'hafiza', '3487557f227137a65d7961dfc88f1a27', 'Admin', 'hafiza.jpg'),
-(6, 'Raihan', 'raihan@gmail.com', 'raihan', 'daa6b8d04ce72d953d5501adc53ddd82', 'Superadmin', 'Screenshot (235).png');
+(1, 'Dionysius Yudha Riadi', 'dion@email.com', 'dion', '982c500a206551c665f746cc9e77a961', 'Superadmin', 'dion.png'),
+(2, 'Desi Fitriyyah', 'desi@email.com', 'desi', '069e2dd171f61ecffb845190a7adf425', 'Superadmin', 'desi.jpeg'),
+(4, 'Hafiza Kartikasari', 'hafiza@email.com', 'hafiza', '3487557f227137a65d7961dfc88f1a27', 'Admin', 'hafiza.jpg'),
+(6, 'Raihan', 'raihan@email.com', 'raihan', 'daa6b8d04ce72d953d5501adc53ddd82', 'Superadmin', 'Screenshot (235).png');
 
 -- --------------------------------------------------------
 
